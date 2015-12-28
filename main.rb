@@ -11,5 +11,6 @@ require './models'
 set :sessions, :true
 
 get '/' do
-  "Welcome to DishDish!"
+#  "Welcome to DishDish!"
+  erb :login
 end
