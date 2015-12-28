@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228211025) do
+ActiveRecord::Schema.define(version: 20151228211441) do
+
+  create_table "menus", force: :cascade do |t|
+    t.string  "name"
+    t.string  "address"
+    t.string  "phone"
+    t.string  "description"
+    t.integer "owner_id"
+  end
 
   create_table "owners", force: :cascade do |t|
     t.string  "username"
