@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228210646) do
+ActiveRecord::Schema.define(version: 20151228211025) do
+
+  create_table "owners", force: :cascade do |t|
+    t.string  "username"
+    t.string  "password"
+    t.integer "menu_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
