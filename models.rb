@@ -15,12 +15,21 @@ end
 class Owner < ActiveRecord::Base
 # each owner (aka restaurant) creates one menu
 	has_one :menu
+
+	def has_menu?
+		!self.menu.nil?
+	end
+
 end
 
 class Menu < ActiveRecord::Base
 # each menu belongs to an ower and contains several dishes
 	belongs_to :owner
 	has_many :dishes
+
+	def menu_status
+
+	end
 end
 
 class Dish < ActiveRecord::Base

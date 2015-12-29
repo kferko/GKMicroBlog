@@ -1,0 +1,41 @@
+<!-- owner home page -->
+<h1>Welcome, owner <strong><%=current_user.username%></strong>!</h1>
+
+<!-- if owner has menu, display form for adding new menu items  -->
+<% if current_user.has_menu? 			         %>
+<%= "<h2>Your current menu:</h2>"          %>
+
+<%= "<form method='POST' action='/add-dishes'>" %>
+
+<%=	"<input type='text' name='dish-name' placeholder='Dish name' required>" %>
+
+<%=	"<input type='text' name='dish-price' placeholder='Price (e.g., 10.99)' required>" %>
+
+<%=	"<textarea type='textarea' name='dish-description' placeholder='Describe all of the amazing details of this dish!' required></textarea>" %>
+
+<%=	"<input type='submit' value='Add dish!'>" %>
+
+<%= "</form>" %>
+
+<!-- if owner has no menu yet, display form for adding menu -->
+<% else 																   %>
+
+<%= "<h2>You don't have a Restaurant yet!</h2>" %>
+
+<%= "<form method='POST' action='/add-menu'>" %>
+
+<%= "<input type='text' name='restaurant-name' placeholder='Restaurant name' required>" %>
+
+<%= "<input type='text' name='restaurant-address' placeholder='Address (Street, City, ZIP)' required>" %>
+
+<%= "<input type='text' name='restaurant-phone' placeholder='phone (XXX-XXX-XXXX)' required>" %>
+
+<%= "<textarea type='textarea' name='restaurant-description' placeholder='How would you describe your restaurant?' required></textarea>" %>
+
+<%= "<input type='submit' value='Create restaurant!'>" %>
+
+<%= "</form>" %>
+
+<% end %>
+
+<a href='/'>Log out</a>
