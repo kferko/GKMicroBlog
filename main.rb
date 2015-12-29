@@ -12,6 +12,7 @@ set :sessions, :true
 
 get '/' do
 #  "Welcome to DishDish!"
+	session.clear
 	erb :login
 end
 
@@ -27,7 +28,7 @@ post '/create-user' do
 	else 
 		User.create(username: params[:username], password: params[:password])
 		session[:user_id] = User.where(username: params[:username]).first.id
-		erb :new_user_success
+		erb :user_home
 	end
 end
 
@@ -44,7 +45,8 @@ post '/create-owner' do
 		Owner.create(username: params[:username], password: params[:password])
 		session[:user_id] = Owner.where(username: params[:username]).first.id
 		session[:owner] = true
-		erb :new_owner_success
+		# erb :new_owner_success
+		erb :owner_home
 	end
 end
 
@@ -73,6 +75,26 @@ post '/sign-in' do
 			erb :login
 		end
 	end
+end
+
+# route for adding a Menu
+post '/add-menu' do
+	# TODO: input validation
+	Menu.create(name: params[:name],
+				address: params[:address],
+				phone: params[:phone],
+				description: params[:description],
+				owner_id: session[:user_id])
+	erb :owner_home		
+end
+
+# route for adding new Dish (menu item)
+post '/add-dish' do
+
+end
+
+# route for adding review of menu item 
+post '/add-review' do
 end
 
 def current_user
