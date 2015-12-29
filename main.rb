@@ -16,11 +16,8 @@ get '/' do
 end
 
 post '/create-user' do
-	if owner_exists?(params[:username])
-		puts "There is already an Owner with that name!" #TODO: Add flash message
-		erb :login
-	elsif user_exists?(params[:username])
-		puts "There is already a User with that name!" #TODO: Add flash message
+	if name_taken?(params[:username]) 
+		puts "That name has already been taken!" #TODO: Add flash message
 		erb :login
 	elsif params[:password] != params[:password_confirmation]
 		puts "Those passwords don't match!" #TODO: Add flash message
@@ -29,18 +26,14 @@ post '/create-user' do
 	### TODO: Add validation of password (restrict to alphanumeric, length, etc.)
 	else 
 		User.create(username: params[:username], password: params[:password])
-		puts "User #{params[:username]} created!!!"
 		session[:user_id] = User.where(username: params[:username]).first.id
 		erb :new_user_success
 	end
 end
 
 post '/create-owner' do
-	if owner_exists?(params[:username]) 
-		puts "There is already an Owner with that name!" #TODO: Add flash message
-		erb :login
-	elsif user_exists?(params[:username]) 
-		puts "There is already a User with that name!" #TODO: Add flash message
+	if name_taken?(params[:username]) 
+		puts "That name has already been taken!" #TODO: Add flash message
 		erb :login
 	elsif params[:password] != params[:password_confirmation]
 		puts "Those passwords don't match!" #TODO: Add flash message
@@ -49,10 +42,36 @@ post '/create-owner' do
 	### TODO: Add validation of password (restrict to alphanumeric, length, etc.)
 	else 
 		Owner.create(username: params[:username], password: params[:password])
-		puts "Owner #{params[:username]} created!!!"
 		session[:user_id] = Owner.where(username: params[:username]).first.id
 		session[:owner] = true
 		erb :new_owner_success
+	end
+end
+
+post '/sign-in' do
+	if !name_taken?(params[:username])
+		puts "That username doesn't exist!" #TODO: add flash message
+		erb :login
+	elsif owner_exists?(params[:username])
+		@user = Owner.where(username: params[:username]).first
+		if valid_password?(@user, params[:password])
+			session[:owner] = true	
+			session[:user_id] = Owner.where(username: params[:username]).first.id
+			erb :owner_home
+		else
+			puts "That password is not correct." #TODO: add flash message
+			erb :login
+		end
+	elsif user_exists?(params[:username])
+		@user = User.where(username: params[:username]).first
+		if valid_password?(@user, params[:password])
+			session[:user_id] = User.where(username: params[:username]).first.id
+			session[:owner] = false
+			erb :user_home
+		else
+			puts "That password is not correct." #TODO: flash message
+			erb :login
+		end
 	end
 end
 
@@ -70,4 +89,12 @@ end
 
 def owner_exists?(name)
 	!Owner.where(username: name).first.nil?
+end
+
+def name_taken?(name)
+	user_exists?(name) || owner_exists?(name)
+end
+
+def valid_password?(user, password)
+	user.password == password
 end
