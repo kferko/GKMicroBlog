@@ -85,11 +85,28 @@ get '/profile' do
 	end
 end
 
+get '/update/user/:user_id' do
+	erb :update_user
+end
+
 post '/delete/:dish_id' do
 	current_menu.dishes.find(params[:dish_id]).destroy if session[:owner]
 	redirect '/profile'
 end
 
+# route for updating a User profile detail 
+post '/update/user/:user_id' do
+	User.find(params[:user_id]).update_attributes(params.keys.first => params[params.keys.first])
+	erb :update_user
+end
+
+# route for updating a User password
+post '/change-password/user/:user_id' do
+	if valid_password?(current_user, params[:old_password]) && (params[:new_password] == params[:new_password_confirmation])
+		User.find(params[:user_id]).update_attributes(password: params[:new_password])
+	end #TODO: add flash message for password change success
+	erb :update_user
+end
 
 # route for adding a Menu
 post '/add-menu' do
@@ -113,7 +130,6 @@ end
 
 # route for updating a Dish (menu item)
 post '/update/:dish_id' do
-	puts params.inspect
 	Dish.find(params[:dish_id]).update_attributes(params.keys.first => params[params.keys.first])
 	erb :update_item
 end
