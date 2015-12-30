@@ -1,0 +1,13 @@
+<h1><%=current_menu.name%></h1>
+<ul>
+<% current_menu.dishes.each do |dish| %>
+<%= "<li>#{dish.name}</li>" %>
+	<%= "<ul>" %>
+		<%= "<li>$#{dish.price}  " %>
+		<%= "<li><em>#{dish.description}</em>" %>
+		<%= "<li><a href='#{dish.id}/reviews'>#{dish.reviews.count} reviews</a> (average: #{dish.average_rating})</li>" %>
+		<%= "<li><a href='/item/add-review/#{dish.id}'>Add your dish!</a></li>" %>
+	<%= "</ul>" %>
+<% end %>
+</ul>
+
