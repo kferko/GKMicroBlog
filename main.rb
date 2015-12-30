@@ -77,6 +77,20 @@ post '/sign-in' do
 	end
 end
 
+get '/profile' do
+	if session[:owner]
+		erb :owner_home
+	else 
+		erb :user_home
+	end
+end
+
+post '/delete/:dish_id' do
+	current_menu.dishes.find(params[:dish_id]).destroy if session[:owner]
+	redirect '/profile'
+end
+
+
 # route for adding a Menu
 post '/add-menu' do
 	# TODO: input validation
@@ -85,12 +99,23 @@ post '/add-menu' do
 				phone: params[:phone],
 				description: params[:description],
 				owner_id: session[:user_id])
-	erb :owner_home		
+	redirect '/profile'
 end
 
 # route for adding new Dish (menu item)
 post '/add-dish' do
+	Dish.create(name: params[:name],
+				price: params[:price],
+				description: params[:description],
+				menu_id: current_menu.id)
+	redirect '/profile' #TODO: add flash message for dish addition success
+end
 
+# route for updating a Dish (menu item)
+post '/update/:dish_id' do
+	puts params.inspect
+	Dish.find(params[:dish_id]).update_attributes(params.keys.first => params[params.keys.first])
+	erb :update_item
 end
 
 # route for adding review of menu item 
@@ -119,4 +144,14 @@ end
 
 def valid_password?(user, password)
 	user.password == password
+end
+
+def current_menu
+	if session[:user_id] && session[:owner]
+		@current_menu = Owner.find(session[:user_id]).menu
+	end
+end
+
+def current_dish 
+	@current_dish = Dish.find(params[:dish_id])
 end
