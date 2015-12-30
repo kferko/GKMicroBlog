@@ -128,8 +128,13 @@ post '/add-dish' do
 	redirect '/profile' #TODO: add flash message for dish addition success
 end
 
+# route to dish update view
+get '/update/dish/:dish_id' do
+	erb :update_item
+end
+
 # route for updating a Dish (menu item)
-post '/update/:dish_id' do
+post '/update/dish/:dish_id' do
 	Dish.find(params[:dish_id]).update_attributes(params.keys.first => params[params.keys.first])
 	erb :update_item
 end
