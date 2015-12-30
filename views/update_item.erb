@@ -1,0 +1,21 @@
+<h3><%=current_dish.name%></h3>
+<ul>
+	<li>Current price: $<%=current_dish.price%></li>
+	<li>Current description: <em><%=current_dish.description%></em></li>
+</ul>
+
+<form method='post' action='/update/<%=current_dish.id%>'>
+	<input type="text" name="price" placeholder="enter updated price" required>
+	<input type="submit" value="update price">
+</form>
+
+<form method='post' action='/update/<%=current_dish.id%>'>
+	<input type="text" name="description" placeholder="enter updated description" required>
+	<input type="submit" value="update description">
+</form>
+
+<form method='post' action='/delete/<%=current_dish.id%>'>
+	<input type="submit" name="delete-dish" value="delete dish">
+</form>
+
+<a href='/profile'>Back to menu</a>

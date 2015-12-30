@@ -36,6 +36,22 @@ class Dish < ActiveRecord::Base
 # every dish belongs to one menu, and can have many reviews from users
 	belongs_to :menu
 	has_many :reviews
+
+	def has_reviews?
+		!self.reviews.empty? 
+	end
+
+	def ratings
+		self.reviews.map{|review| review.rating}
+	end
+
+	def average_rating 
+		if has_reviews?
+			ratings.reduce(0){|sum, rating| sum + rating} / ratings.count.to_f
+		else
+			"NA"
+		end
+	end
 end
 
 class UserFriendship < ActiveRecord::Base
