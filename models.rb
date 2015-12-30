@@ -52,6 +52,10 @@ class Dish < ActiveRecord::Base
 			"NA"
 		end
 	end
+
+	def ever_reviewed_by?(user_id)
+		self.reviews.any?{|review| review.user_id == user_id}
+	end
 end
 
 class UserFriendship < ActiveRecord::Base

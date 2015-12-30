@@ -1,0 +1,34 @@
+
+
+<%if current_dish.ever_reviewed_by?(current_user.id)%>
+<%="<h3>Edit your dish on #{current_dish.name} from #{current_dish.menu.name}</h3>"%>
+<%="<ul>" %>
+<%= 	"<li>Your dish: <em>#{current_dish.reviews.where(user_id: current_user.id).first.description}</em></li>"%>
+<%= 	"<li>Your rating: #{current_dish.reviews.where(user_id: current_user.id).first.rating}</li>"%>
+<%="</ul>"%>
+<%else%>
+<%="<h3>What's your dish on #{current_dish.name} from #{current_dish.menu.name}?</h3>"%>
+<%="<h3>You haven't reviewed this yet!</h3>"%>
+<%="<p><strong>From the menu:</strong><p>"%>
+<%="<p><em>#{current_dish.description}</em><p>"%>
+<%end%>
+
+<form method='post' action='/item/<%=current_dish.id%>/review'>
+	<%if current_dish.ever_reviewed_by?(current_user.id)%>
+	<%="<input type='text' name='rating' value='#{current_dish.reviews.where(user_id: current_user.id).first.rating}' required>"%>
+	<%="<textarea type='text' name='description' required>#{current_dish.reviews.where(user_id: current_user.id).first.description}</textarea>"%>
+	<%="<input type='submit' value='update your dish!'>"%>
+	<%else%>
+	<%="<input type='text' name='rating' placeholder='Rate 1-5' required>"%>
+	<%="<textarea type='text' name='description' placeholder='Dish it out!' required></textarea>"%>
+	<%="<input type='submit' value='add your dish!'>"%>
+	<%end%>
+</form>
+
+<%if current_dish.ever_reviewed_by?(current_user.id)%>
+<%="<form method='post' action='/item/#{current_dish.id}/review/delete'>"%>
+<%="<input type='submit' name='delete-review' value='delete your dish'>"%>
+<%="</form>"%>
+<%end%>
+
+<a href='/menu/<%=current_dish.menu_id%>'>Back to menu</a><a href='/profile'>Profile</a>	

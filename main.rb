@@ -108,6 +108,10 @@ post '/change-password/user/:user_id' do
 	erb :update_user
 end
 
+get '/menu/:menu_id' do
+	erb :menu
+end
+
 # route for adding a Menu
 post '/add-menu' do
 	# TODO: input validation
@@ -139,9 +143,30 @@ post '/update/dish/:dish_id' do
 	erb :update_item
 end
 
-# route for adding review of menu item 
-post '/add-review' do
+# route for creating/updating review of menu item 
+get '/item/:dish_id/review' do
+	erb :item_review
 end
+
+post '/item/:dish_id/review' do
+	if Review.where(dish_id: params[:dish_id], user_id: current_user.id).empty? 
+		Review.create(dish_id: params[:dish_id], user_id: current_user.id, rating: params[:rating], description: params[:description])
+    else
+    	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(rating: params[:rating], description: params[:description])		
+    end
+	erb :item_review
+end
+
+post '/item/:dish_id/review/delete' do
+	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.destroy
+	erb :item_review
+end
+
+# route to list of all reviews of an item
+get '/item/:dish_id/reviews' do
+	erb :reviews
+end
+
 
 def current_user
 	if session[:user_id] && session[:owner]
@@ -170,6 +195,8 @@ end
 def current_menu
 	if session[:user_id] && session[:owner]
 		@current_menu = Owner.find(session[:user_id]).menu
+	else
+		@current_menu = Menu.find(params[:menu_id])	
 	end
 end
 

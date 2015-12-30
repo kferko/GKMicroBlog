@@ -7,11 +7,11 @@
 <h2>Followers:</h2>
 <h2>Your latest dishes:</h2>
 <% current_user.reviews.each do |review| %>
-<%= "<a href='/dish/#{review.dish_id}'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
+<%= "<a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
 	<%= "<ul>" %>
 		<%= "<li>#{review.rating}/5 (average rating: #{review.dish.average_rating})</li>" %>
 		<%= "<li>Your dish: <em>#{review.description}</em></li>" %>
-		<%= "<li><a href='update/review/#{review.id}'>Update/Remove</a></li>" %>
+		<%= "<li><a href='/item/#{review.dish_id}/review'>Edit/Remove</a></li>" %>
 	<%= "</ul>" %>
 <% end %>
 
