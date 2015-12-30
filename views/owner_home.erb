@@ -7,7 +7,7 @@
 
 <%= "<ul>" %>
 <% current_user.menu.dishes.each do |dish| %>
-<%= "<li>#{dish.name} <a href='update/#{dish.id}'>Update/Remove</a></li>" %>
+<%= "<li>#{dish.name} <a href='update/dish/#{dish.id}'>Update/Remove</a></li>" %>
 	<%= "<ul>" %>
 		<%= "<li>$#{dish.price}  " %>
 		<%= "<li><em>#{dish.description}</em>" %>
