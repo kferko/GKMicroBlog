@@ -143,20 +143,30 @@ post '/update/dish/:dish_id' do
 	erb :update_item
 end
 
-# route for adding review of menu item 
-get '/item/add-review/:dish_id' do
-	erb :review_item
+# route for creating/updating review of menu item 
+get '/item/:dish_id/review' do
+	erb :item_review
 end
 
-post '/item/add-review/:dish_id' do
+post '/item/:dish_id/review' do
 	if Review.where(dish_id: params[:dish_id], user_id: current_user.id).empty? 
-		Review.create(dish_id: params[:dish_id], user_id: current_user.id)
-		Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(params.keys.first => params[params.keys.first])
+		Review.create(dish_id: params[:dish_id], user_id: current_user.id, rating: params[:rating], description: params[:description])
     else
-    	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(params.keys.first => params[params.keys.first])		
+    	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(rating: params[:rating], description: params[:description])		
     end
-	erb :review_item
+	erb :item_review
 end
+
+post '/item/:dish_id/review/delete' do
+	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.destroy
+	erb :item_review
+end
+
+# route to list of all reviews of an item
+get '/item/:dish_id/reviews' do
+	erb :reviews
+end
+
 
 def current_user
 	if session[:user_id] && session[:owner]

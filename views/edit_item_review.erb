@@ -11,18 +11,14 @@
 <%="<p><em>#{current_dish.description}</em><p>"%>
 <%end%>
 
-<form method='post' action='/item/add-review/<%=current_dish.id%>'>
+<form method='post' action='/item/<%=current_dish.id%>/review/edit'>
 	<input type="text" name="rating" placeholder="Rate 1-5" required>
-	<input type="submit" value="add rating">
-</form>
-
-<form method='post' action='/item/add-review/<%=current_dish.id%>'>
 	<textarea type="text" name="description" placeholder="Dish it out!" required></textarea>
-	<input type="submit" value="add your dish!">
+	<input type="submit" value="dish!">
 </form>
 
 <form method='post' action='/item/delete-review/<%=current_dish.id%>'>
 	<input type="submit" name="delete-review" value="delete your dish">
 </form>
 
-<a href='/menu'>Back to menu</a>
+<a href='/menu/<%=current_dish.menu_id%>'>Back to menu</a>

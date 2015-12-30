@@ -1,0 +1,22 @@
+<h1>Latest dishes on <%=current_dish.name%> from <%=current_dish.menu.name%></h1>
+<ul>
+	<li><em><%=current_dish.description%></em> ($<%=current_dish.price%>)</li>
+	<li>average rating from <%=current_dish.reviews.count%> reviews: <%=current_dish.average_rating%>/5</a></li>
+</ul>
+
+<h2>Your dish:</h2>
+<%if current_dish.ever_reviewed_by?(current_user.id)%>
+<%= "<p>You dished: \"<em>#{current_dish.reviews.where(user_id: current_user.id).first.description}</em>\"</p>"%> 
+<%= "#{current_dish.reviews.where(user_id: current_user.id).first.rating}/5 <a href='/item/#{current_dish.id}/review'>Edit your dish!</a><p>" %>
+<%else%>
+<%= "<p><li>You haven't tried this yet. <a href='/item/#{current_dish.id}/review'>Add your dish!</a></p>" %>
+<%end%>
+
+<h2>Other dishes:</h2>
+<ul>
+<% current_dish.reviews.each do |review| %>
+	<%= "<li>#{review.user.username}: <em>\"#{review.description}</em>\" (#{review.rating}/5)</li>" %>
+<%end%>
+</ul>
+
+<a href='/menu/<%=current_dish.menu_id%>'>Back to menu</a><a href='/profile'>Profile</a>		

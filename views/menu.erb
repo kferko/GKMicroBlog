@@ -1,13 +1,18 @@
 <h1><%=current_menu.name%></h1>
+<h2><%=current_menu.address%></h2>
+<h2><%=current_menu.phone%></h2>
 <ul>
 <% current_menu.dishes.each do |dish| %>
-<%= "<li>#{dish.name}</li>" %>
+<%= "<li>#{dish.name}: <em>#{dish.description}</em> ($#{dish.price})</li>" %>
 	<%= "<ul>" %>
-		<%= "<li>$#{dish.price}  " %>
-		<%= "<li><em>#{dish.description}</em>" %>
-		<%= "<li><a href='#{dish.id}/reviews'>#{dish.reviews.count} reviews</a> (average: #{dish.average_rating})</li>" %>
-		<%= "<li><a href='/item/add-review/#{dish.id}'>Add your dish!</a></li>" %>
+		<%= "<li>(average: #{dish.average_rating}/5) <a href='/item/#{dish.id}/reviews'>#{dish.reviews.count} reviews</a></li>"%>
+		<%if dish.ever_reviewed_by?(current_user.id)%>
+		<%= "<li>Your dish: \"<em>#{dish.reviews.where(user_id: current_user.id).first.description}</em>\" #{dish.reviews.where(user_id: current_user.id).first.rating}/5 <a href='/item/#{dish.id}/review'>Edit your dish!</a></li>" %>
+		<%else%>
+		<%= "<li>You haven't tried this yet. <a href='/item/#{dish.id}/review'>Add your dish!</a></li>" %>
+		<%end%>
 	<%= "</ul>" %>
 <% end %>
 </ul>
 
+<a href='/profile'>Profile</a>
