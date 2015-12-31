@@ -11,8 +11,6 @@ require './models'
 set :sessions, :true
 
 get '/' do
-#	session.clear
-#	erb :login
 	erb :home
 end
 
