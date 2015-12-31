@@ -49,7 +49,7 @@ body{
 
 
 /* ----- LOGO ----- */
-.logo {
+/*.logo {
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -58,9 +58,8 @@ body{
 	margin-top: 5px;
 	z-index: 9;
 	position: absolute;
-	background: url(/img/logo.svg) center no-repeat;
 }
-/*#logo {
+#logo {
 	height: 150px;
 }*/
 
@@ -128,7 +127,7 @@ body{
 .headerlcb{
 	background-color: rgb(240, 92, 34);
 	width:500px;
-	height: 135px;
+	height: 105px;
 	border-top-right-radius: 55px;
 	margin-top: 20px;
 	display:inline;
@@ -148,12 +147,6 @@ body{
 	align-items:center;
 	height:50px;
 	z-index: 5;
-}
-#lheadbod {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	margin-top: -10px;
 }
 #lsubhead {
 	display:flex;
@@ -178,7 +171,7 @@ body{
 .headerrcb{
 	background-color: rgb(131, 200, 191);
 	width:500px;
-	height: 135px;
+	height: 105px;
 	border-top-left-radius: 55px;
 	margin-top: 20px;
 	display:inline;
@@ -199,12 +192,6 @@ body{
 	height:50px;
 	z-index: 5;
 }
-#rheadbod {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	margin-top: -10px;
-}
 #rsubhead {
 	display:flex;
 	justify-content:center;
@@ -212,6 +199,29 @@ body{
 	height:50px;
 	width: 100%;
 	margin-top: -45px;
+	margin-bottom: -10px;
+	z-index: 7;
+	position: relative;
+}
+#rsubhead_left {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	width: 50%;
+	margin-top: -45px;
+	margin-bottom: -10px;
+	z-index: 7;
+	position: relative;
+}
+#rsubhead_right {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	width: 50%;
+	margin-top: -45px;
+	margin-bottom: -10px;
 	z-index: 7;
 	position: relative;
 }
@@ -296,7 +306,7 @@ body{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 36px;
 	font-weight: 700;
-	letter-spacing: -4px;
+	letter-spacing: .5px;
 	display: inline; 
 }
 #rhead p{
@@ -328,7 +338,22 @@ body{
 	letter-spacing: -4px;
 	margin-right: 5px;
 }
-
+#rsubhead h3{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h4{
+	color: rgb(192, 62, 26);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
 
 /* ----- REVIEWS BOX ----- */
 .reviewsleft {
@@ -644,3 +669,78 @@ body{
 	font-size: 18px;
 	margin: 0;
 }
+
+
+
+
+.horizbarcont {
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#horizbar {
+	width: 450px;
+	height: 6px;
+	border-radius: 3px;
+	background-color: rgba(201, 226, 231, .5);
+	margin-left: 25px;
+	margin-top: 10px;
+}
+
+/* FOLLOWERS */
+.followers, .following {
+	width: 220px;
+	height: 320px;
+	float:right;
+	/*position: relative;*/
+	margin: 10px;
+
+/*	display:flex;
+	justify-content:center;
+	align-items:center;*/
+	overflow:scroll;
+}
+.followbox{
+	background-color: rgb(255, 255, 255);
+	width: 50px;
+	height: 110px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+#followerid {
+	width: 50px;
+	height: 110px;
+	/*margin-left: 10px;*/
+	/*display: inline;*/
+}
+#followerphoto {
+	background-color: rgb(207, 207, 207);
+	width: 50px;
+	height: 70px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#followerphoto p{
+	color: rgb(240, 92, 34);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#followername{
+	background-color: rgb(192, 62, 26);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#followername p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+

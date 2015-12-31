@@ -11,9 +11,22 @@ require './models'
 set :sessions, :true
 
 get '/' do
-	session.clear
-	erb :login
+	erb :home
 end
+
+get '/user_home_css' do
+	erb :user_home_css
+end
+
+get '/owner_home_css' do
+	erb :owner_home_css
+end
+
+# get '/' do
+# #  "Welcome to DishDish!"
+# 	session.clear
+# 	erb :login
+# end
 
 post '/create-user' do
 	if name_taken?(params[:username]) 

@@ -1,0 +1,28 @@
+/* ----- SIGNIN TOP RIGHT ----- */
+.signin {
+	width: 96%;
+	height: 50px;
+	margin-top: 10px;
+	display: flex;
+	justify-content:flex-end;
+  	/*align-items: center;*/
+  	z-index: 12;
+  	position: absolute;
+}
+.topsignin {
+	z-index: 5;
+	position: absolute;
+}
+.signinform {
+	position: absolute;
+  	/*background-color: rgb(240, 92, 34);*/
+  	right: -400px;
+  	width: 330px;
+  	height: 30px;
+	display:flex;
+	align-items:center;
+	float:right;
+	/*padding-left: 30px;*/
+	z-index: 3;
+	text-decoration: none;
+}

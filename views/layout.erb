@@ -1,1 +1,33 @@
-<%=yield%>
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= @title %></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/userpage.css">
+	<link rel="stylesheet" type="text/css" href="/css/ownerpage.css">
+		<link rel="stylesheet" type="text/css" href="/css/signin.css">
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300|Questrial' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container">
+	<div class="signin">
+		<div class="topsignin"><input type='image' id='clicksi' img src="/img/signin.png"></div>
+	      	<div class="signinform">
+	    		<form method="POST" action="/sign-in">
+					<input type="text" name="username" placeholder="username" required>
+					<input type="password" name="password" placeholder="password" required>
+					<input type="submit" value="sign in!">
+				</form>
+	    	</div>
+	</div>
+	<a href='/'><div class="logo"></div></a>
+				<!-- start ruby -->
+					<%= yield %>	
+				<!-- end ruby -->
+	</div>
+</body>
+</html>
