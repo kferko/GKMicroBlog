@@ -11,7 +11,6 @@ require './models'
 set :sessions, :true
 
 get '/' do
-#  "Welcome to DishDish!"
 	session.clear
 	erb :login
 end
@@ -77,6 +76,7 @@ post '/sign-in' do
 	end
 end
 
+# to current user profile
 get '/profile' do
 	if session[:owner]
 		erb :owner_home
@@ -85,10 +85,12 @@ get '/profile' do
 	end
 end
 
+# to current user profile settings
 get '/update/user/:user_id' do
 	erb :update_user
 end
 
+# deleting a dish from a menu
 post '/delete/:dish_id' do
 	current_menu.dishes.find(params[:dish_id]).destroy if session[:owner]
 	redirect '/profile'
@@ -167,6 +169,20 @@ get '/item/:dish_id/reviews' do
 	erb :reviews
 end
 
+# route to user public profile
+get '/user/:other_id' do
+	erb :public_profile
+end
+
+get '/user/:other_id/follow' do
+	UserFriendship.create(user_id: current_user.id, user_friend_id: params[:other_id])
+	erb :public_profile
+end
+
+get '/user/:other_id/unfollow' do
+	UserFriendship.where(user_id: current_user.id, user_friend_id: params[:other_id]).first.destroy
+	erb :public_profile
+end
 
 def current_user
 	if session[:user_id] && session[:owner]
@@ -202,4 +218,8 @@ end
 
 def current_dish 
 	@current_dish = Dish.find(params[:dish_id])
+end
+
+def current_other
+	@current_other = User.find(params[:other_id])
 end

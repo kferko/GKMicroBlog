@@ -4,6 +4,23 @@ class User < ActiveRecord::Base
 # users can follow other users
 	has_many :user_friends, through: :user_friendships
 	has_many :user_friendships
+
+	def followers # users are followed by followers
+		followerships = UserFriendship.where(user_friend_id: self.id)
+		followerships.map{|followership| User.find(followership.user_id)}
+	end
+
+	def friends # users follow friends 
+		self.user_friends
+	end
+
+	def followed_by?(user_id)
+		followers.any?{|follower| follower.id == user_id}
+	end
+
+	def follows?(user_id)
+		friends.any?{|friend| friend.id == user_id}
+	end
 end
 
 class Review < ActiveRecord::Base
