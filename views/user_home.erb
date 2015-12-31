@@ -1,15 +1,25 @@
 <!-- user home page  -->
+<!-- within any view, current_user will return the user that is currently logged in -->
+<!-- current_user.username = username, current_user.motto = short motto from profile -->
 
-<h1>Welcome, user <strong><%=current_user.username%></strong>!</h1>
+<h1>Welcome, user <strong><%=current_user.username%></strong>!</h1> 
 <h2>Personal motto: <em><%=current_user.motto%></em></h2>
 <h2>Favorites:</h2>
+
+<!-- current_user.friends returns an array of users that the current user follows -->
+
 <h2><%=current_user.friends.count%> Following: </h2>
 	<ul>
+	<!-- this each loop creates a new <li> with a friend name (wrapped in a link to that friends profile page) -->
+	<!-- it outputs one new <li> for each friend that the current user has  -->
 	<%current_user.friends.each do |friend|%>
 	<%="<li><a href='/user/#{friend.id}'>#{friend.username}</a></li>" %>	
 	<%end%>
 	</ul>
+<!-- current_user.followers returns an array of users that FOLLOW the current user -->
 <h2><%=current_user.followers.count%> Followers:</h2>
+	<!-- this each loop creates a new <li> with a follower name (wrapped in a link to that followers profile page) -->
+	<!-- it outputs one new <li> for each follower that the current user has  -->
 	<ul>
 	<%current_user.followers.each do |follower|%>
 	<%="<li><a href='/user/#{follower.id}'>#{follower.username}</a></li>" %>	
@@ -17,25 +27,36 @@
 	</ul>
 
 <h2>Latest dishes from your network:</h2>
+<!-- current_user.recent_friend_reviews returns an array of Review objects, sorted in reverse chronological order -->a
+<!-- this each loop creates small heading (containing friend name and dish name) and <ul> for each of the friend reviews  -->
+<!-- the hrefs in the <a>s are links to the friend's profile page ('user/#{review.user_id'), or the dish being reviewed ('item/#{review.dish_id'), -->
+<!-- or the menu that dish is from ('/menu/#{review.dish.menu_id}')  -->
 <% current_user.recent_friend_reviews.each do |review| %>
 	<%= "<a href='/user/#{review.user_id}'>#{review.user.username}</a> dished on <a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
+	<!-- review.description returns the text description in each review -->
+	<!-- review rating returns the numeric rating (1 to 5) in each review -->
+	<!-- review.dish.average_rating returns the average numeric rating of all the ratings of that dish -->
 		<%= "<ul>" %>
 			<%= "<li>\"<em>#{review.description}</em>\"</li>" %>	
 			<%= "<li>#{review.rating}/5 (average rating: #{review.dish.average_rating})</li>" %>
 		<%= "</ul>" %>
 <% end %>
 
+<!-- current_user.reviews returns an array of Review objects created by the current user -->
 <h2>Your latest dishes:</h2>
+<!-- this loop creates <ul>s, similar to the above loop, but these reviews are just those written by the user -->
 <% current_user.reviews.each do |review| %>
 <%= "<a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
 	<%= "<ul>" %>
 		<%= "<li>#{review.rating}/5 (average rating: #{review.dish.average_rating})</li>" %>
 		<%= "<li>Your dish: <em>#{review.description}</em></li>" %>
+		<!-- this link takes the user to a page where they can update the fields in their review, or delete them completely (item_review.erb) -->
 		<%= "<li><a href='/item/#{review.dish_id}/review'>Edit/Remove</a></li>" %>
 	<%= "</ul>" %>
 <% end %>
 
 
-
+<!-- the link to '/update/user/<%=current_user.id%>' takes the user to update_user.erb, where user info can be edited-->
 <a href='/update/user/<%=current_user.id%>'>Change profile details</a>
+<!-- the link to '/' will not actually log the user out unless session.clear is added to the get '/' route -->
 <a href='/'>Log out</a>
