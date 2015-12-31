@@ -14,6 +14,10 @@ get '/' do
 	erb :home
 end
 
+get '/user_home_css' do
+	erb :user_home_css
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear
