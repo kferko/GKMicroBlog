@@ -37,7 +37,7 @@ body{
 
 
 /* ----- SIGNIN TOP RIGHT ----- */
-.topsignin {
+/*.topsignin {
 	display: flex;
 	width: 98%;
 	height:30px;
@@ -45,7 +45,7 @@ body{
 	z-index: 2;
 	justify-content:flex-end;
 	position: absolute;
-}
+}*/
 
 
 /* ----- LOGO ----- */
@@ -58,10 +58,11 @@ body{
 	margin-top: 5px;
 	z-index: 9;
 	position: absolute;
+	background: url(/img/logo.svg) center no-repeat;
 }
-#logo {
+/*#logo {
 	height: 150px;
-}
+}*/
 
 
 /* ----- MENU BACKGROUND ----- */
