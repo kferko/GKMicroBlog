@@ -15,8 +15,10 @@
 <h2>Other dishes:</h2>
 <ul>
 <% current_dish.reviews.each do |review| %>
-	<%= "<li>#{review.user.username}: <em>\"#{review.description}</em>\" (#{review.rating}/5)</li>" %>
+	<%= "<li><a href='/user/#{review.user_id}'>#{review.user.username}</a>: <em>\"#{review.description}</em>\" (#{review.rating}/5)</li>" %>
 <%end%>
 </ul>
 
-<a href='/menu/<%=current_dish.menu_id%>'>Back to menu</a><a href='/profile'>Profile</a>		
+<a href='/menu/<%=current_dish.menu_id%>'>Back to menu</a>
+<a href='/profile'>Back to profile</a>
+<a href='/'>Log out</a>		

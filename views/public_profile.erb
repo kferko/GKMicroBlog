@@ -1,0 +1,36 @@
+<!-- user public profile  -->
+
+<h1>User <%=current_other.username%></h1>
+<h2>Personal motto: <em><%=current_other.motto%></em></h2>
+<h2>Favorites:</h2>
+<h2><%=current_other.friends.count%> Following</h2>
+	<ul>
+	<%current_other.friends.each do |friend|%>
+	<%="<li><a href='/user/#{friend.id}'>#{friend.username}</a></li>" %>	
+	<%end%>
+	</ul>
+	<%if current_other.follows?(current_user.id)%>
+	<%="<p>#{current_other.username} follows you!</p>"%>
+	<%end%> 
+<h2><%=current_other.followers.count%> Followers</h2>
+	<ul>
+	<%current_other.followers.each do |follower|%>
+	<%="<li><a href='/user/#{follower.id}'>#{follower.username}</a></li>" %>	
+	<%end%>
+	</ul>
+	<%if current_other.followed_by?(current_user.id)%>
+	<%="<p>You follow #{current_other.username}! <a href='/user/#{current_other.id}/unfollow'>Unfollow</a></p>"%>
+	<%elsif current_other.id != current_user.id%>
+	<%="<p>You aren't following #{current_other.username}. <a href='/user/#{current_other.id}/follow'>Follow</a></p>"%>
+	<%end%>
+<h2><%=current_other.username%>'s latest dishes:</h2>
+<% current_other.reviews.each do |review| %>
+<%= "<a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
+	<%= "<ul>" %>
+		<%= "<li>#{review.rating}/5 (average rating: #{review.dish.average_rating})</li>" %>
+		<%= "<li>#{current_other.username}'s dish: \"<em>#{review.description}</em>\"</li>" %>
+	<%= "</ul>" %>
+<% end %>
+
+<a href='/profile'>Back to my profile</a>
+<a href='/'>Log out</a>
