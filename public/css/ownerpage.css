@@ -127,7 +127,7 @@ body{
 .headerlcb{
 	background-color: rgb(240, 92, 34);
 	width:500px;
-	height: 135px;
+	height: 105px;
 	border-top-right-radius: 55px;
 	margin-top: 20px;
 	display:inline;
@@ -148,22 +148,6 @@ body{
 	height:50px;
 	z-index: 5;
 }
-#lheadbod {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	margin-top: -10px;
-}
-#lsubhead {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:50px;
-	width: 100%;
-	margin-top: -45px;
-	z-index: 7;
-	position: relative;
-}
 
 
 /* ----- BODY RIGHT ----- */
@@ -177,7 +161,7 @@ body{
 .headerrcb{
 	background-color: rgb(131, 200, 191);
 	width:500px;
-	height: 135px;
+	height: 105px;
 	border-top-left-radius: 55px;
 	margin-top: 20px;
 	display:inline;
@@ -198,19 +182,25 @@ body{
 	height:50px;
 	z-index: 5;
 }
-#rheadbod {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	margin-top: -10px;
-}
 #rsubhead {
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	height:50px;
 	width: 100%;
+	margin-top: -35px;
+	margin-bottom: -10px;
+	z-index: 7;
+	position: relative;
+}
+#rsubhead_menu {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	width: 22%;
 	margin-top: -45px;
+	margin-bottom: -10px;
 	z-index: 7;
 	position: relative;
 }
@@ -295,7 +285,7 @@ body{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 36px;
 	font-weight: 700;
-	letter-spacing: -4px;
+	letter-spacing: .5px;
 	display: inline; 
 }
 #rhead p{
@@ -327,14 +317,45 @@ body{
 	letter-spacing: -4px;
 	margin-right: 5px;
 }
+#rsubhead h3{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h4{
+	color: rgb(192, 62, 26);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h5{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h6{
+	color: rgb(255, 219, 148);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
 
-
-/* ----- REVIEWS BOX ----- */
-.reviewsleft {
+/* ----- PROFILE BOX ----- */
+.profileleft {
 	width: 480px;
 	margin-right: 20px;
 }
-.reviewsright {
+.menuright {
 	width: 480px;
 	margin-left: 20px;
 }
@@ -397,11 +418,6 @@ body{
 	font-weight: bold;
 	font-size: 12px;
 	letter-spacing: .5px;
-	margin: 0;
-}
-#flag {
-	position: relative;
-	left: 65px;
 	margin: 0;
 }
 .restreviconbar{
@@ -643,3 +659,4 @@ body{
 	font-size: 18px;
 	margin: 0;
 }
+
