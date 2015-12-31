@@ -11,10 +11,14 @@ require './models'
 set :sessions, :true
 
 get '/' do
-#  "Welcome to DishDish!"
-	session.clear
-	erb :login
+	erb :home
 end
+
+# get '/' do
+# #  "Welcome to DishDish!"
+# 	session.clear
+# 	erb :login
+# end
 
 post '/create-user' do
 	if name_taken?(params[:username]) 
