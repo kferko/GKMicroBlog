@@ -1,0 +1,662 @@
+/* ----- COLORS ----- */
+
+/*light tan - rgb(255, 248, 232)
+deeper tan - rgb(255, 219, 148)
+
+light orange - rgb(240, 92, 34)
+orange - rgb(192, 62, 26)
+dark orange/purple - rgb(121, 54, 81)
+
+lightest blue - rgb(201, 226, 231
+light blue - rgb(131, 200, 191)
+blue - rgb(73, 152, 152)
+dark blue - rgb(81, 96, 113)
+
+body font orange - rgb(121, 54, 81)
+body font blue - rgb(81, 96, 113)   */
+
+
+
+/* ----- BACKGROUND ----- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+	background-color: rgb(255, 248, 232);
+    margin:0px 0px;
+  	min-height: 100vh;
+}
+*:focus {
+    outline: none;
+}
+.container { 
+	display: flex;
+  	z-index: 1;
+}
+
+
+/* ----- SIGNIN TOP RIGHT ----- */
+.topsignin {
+	display: flex;
+	width: 98%;
+	height:30px;
+	margin-top: 10px;
+	z-index: 2;
+	justify-content:flex-end;
+	position: absolute;
+}
+
+
+/* ----- LOGO ----- */
+.logo {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width: 100%;
+	height:150px;
+	margin-top: 5px;
+	z-index: 9;
+	position: absolute;
+}
+#logo {
+	height: 150px;
+}
+
+
+/* ----- MENU BACKGROUND ----- */
+.pagepeak_top {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:99.7%;
+	height:105px;
+	margin-top: 117px;
+	z-index: 4;
+	position: absolute;
+}
+.bodywhite{
+	width:100%;
+	vertical-align: top;
+	margin-top: 160px;
+	z-index: 3;
+}
+#bodywhite_left {
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	height:900px;
+	z-index: 3;
+	float:left;
+	border-top-right-radius: 36px;
+}
+#bodywhite_right {
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	height:900px;
+	z-index: 3;
+	float:right;
+	border-top-left-radius: 36px;
+}
+.pagepeak_bott {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	height:42px;
+	margin-top: 1050px;
+	z-index: 5;
+	position: absolute;
+}
+.pagebott_fill {
+	background-color: rgb(200, 225, 231);
+	width:100%;
+	height: 12px;
+	z-index: 4;
+	margin-top: 1050px;
+	position: absolute;
+}
+
+
+/* ----- BODY LEFT ----- */
+.leftbody{
+	width:500px;
+	display:inline;
+}
+
+/* ----- HEADERS LEFT ----- */
+.headerlcb{
+	background-color: rgb(240, 92, 34);
+	width:500px;
+	height: 105px;
+	border-top-right-radius: 55px;
+	margin-top: 20px;
+	display:inline;
+	float:right;
+	position: relative;
+}
+.headerlcbw{
+	background-color: rgb(255, 255, 255);
+	width:500px;
+	height: 55px;
+	border-top-right-radius: 55px;
+	margin-top: 10px;
+}
+#lhead {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	z-index: 5;
+}
+
+
+/* ----- BODY RIGHT ----- */
+.rightbody{
+	width:500px;
+	display:inline;
+}
+
+
+/* ----- HEADERS RIGHT ----- */
+.headerrcb{
+	background-color: rgb(131, 200, 191);
+	width:500px;
+	height: 105px;
+	border-top-left-radius: 55px;
+	margin-top: 20px;
+	display:inline;
+	float:left;
+	position: relative;
+}
+.headerrcbw{
+	background-color: rgb(255, 255, 255);
+	width:500px;
+	height: 55px;
+	border-top-left-radius: 55px;
+	margin-top: 10px;
+}
+#rhead {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	z-index: 5;
+}
+#rsubhead {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	width: 100%;
+	margin-top: -35px;
+	margin-bottom: -10px;
+	z-index: 7;
+	position: relative;
+}
+#rsubhead_menu {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:50px;
+	width: 22%;
+	margin-top: -45px;
+	margin-bottom: -10px;
+	z-index: 7;
+	position: relative;
+}
+
+
+/* ----- HEADERS HEADLINE ----- */
+
+/* --- LEFT --- */
+#lhead h1{
+	color: rgb(192, 62, 26);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#lhead h2{
+	color: rgb(255, 255, 255);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#lhead h3{
+	color: rgb(121, 23, 78);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#lhead p{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -8px;
+	display: inline; 
+}
+#lheadbod p{
+	color: rgb(121, 23, 78);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+}
+#lsubhead h1{
+	color: rgb(131, 200, 191);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#lsubhead h2{
+	color: rgb(73, 152, 152);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+
+/* --- RIGHT --- */
+#rhead h1{
+	color: rgb(73, 152, 152);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#rhead h2{
+	color: rgb(255, 255, 255);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#rhead h3{
+	color: rgb(81, 96, 113);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: .5px;
+	display: inline; 
+}
+#rhead p{
+	color: rgb(131, 200, 191);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -8px;
+	display: inline; 
+}
+#rheadbod p{
+	color: rgb(81, 96, 113);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+}
+#rsubhead h1{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	display: inline; 
+}
+#rsubhead h2{
+	color: rgb(192, 62, 26);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -4px;
+	margin-right: 5px;
+}
+#rsubhead h3{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h4{
+	color: rgb(192, 62, 26);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h5{
+	color: rgb(240, 92, 34);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+#rsubhead h6{
+	color: rgb(255, 219, 148);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -2px;
+	margin-right: 5px;
+}
+
+/* ----- PROFILE BOX ----- */
+.profileleft {
+	width: 480px;
+	margin-right: 20px;
+}
+.menuright {
+	width: 480px;
+	margin-left: 20px;
+}
+
+.restreview {
+	border-radius: 12px;
+	background-color: rgb(255, 248, 232);
+	width: 220px;
+	height: 310px;
+	display:inline;
+	float:right;
+	position: relative;
+	margin: 10px;
+}
+#rrheader {
+	background-color: rgb(131, 200, 191);
+	width: 210px;
+	height: 30px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	position: relative;
+	margin: 5px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#rrheader p{
+	color: rgb(73, 152, 152);
+	font-family: 'Questrial', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0;
+}
+
+.dishreview {
+	border-radius: 12px;
+	background-color: rgb(255, 248, 232);
+	width: 220px;
+	height: 320px;
+	display:inline;
+	float:right;
+	position: relative;
+	margin: 10px;
+}
+#drheader {
+	background-color: rgb(240, 92, 34);
+	width: 210px;
+	height: 30px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	position: relative;
+	margin: 5px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#drheader p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: .5px;
+	margin: 0;
+}
+.restreviconbar{
+	width: 210px;
+	margin-left:10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.dishreviconbar{
+	width: 210px;
+	margin-left:10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-top: 3px;
+}
+
+#restrevicon{
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+}
+.restrevdish{
+	background-color: rgb(255, 255, 255);
+	margin-top: -20px;
+	width: 210px;
+	margin-left: 5px;
+	height: 30px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.restrevdish p {
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+}
+.restrevbox{
+	background-color: rgb(255, 255, 255);
+	width: 210px;
+	height: 155px;
+	position: relative;
+	margin: 0px 5px 10px 5px;
+	display:flex;
+}
+#reviewerid {
+	background-color: rgb(73, 152, 152);
+	width: 50px;
+	height: 150px;
+	margin-left: 10px;
+	/*margin-top: 12px;*/
+}
+#reviewerphoto {
+	background-color: rgb(207, 207, 207);
+	width: 50px;
+	height: 70px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#reviewerphoto p{
+	color: rgb(73, 152, 152);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#reviewername{
+	background-color: rgb(73, 152, 152);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#reviewername p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#reviewerdishes {
+	background-color: rgb(81, 96, 113);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#reviewerdishes p{
+	color: rgb(73, 152, 152);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+
+.dishrevbox{
+	background-color: rgb(255, 255, 255);
+	width: 210px;
+	height: 155px;
+	position: relative;
+	margin: 0px 5px 10px 5px;
+	display:flex;
+}
+#dreviewerid {
+	background-color: rgb(73, 152, 152);
+	width: 50px;
+	height: 150px;
+	margin-left: 10px;
+	/*margin-top: 12px;*/
+}
+#dreviewerphoto {
+	background-color: rgb(207, 207, 207);
+	width: 50px;
+	height: 70px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#dreviewerphoto p{
+	color: rgb(240, 92, 34);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#dreviewername{
+	background-color: rgb(192, 62, 26);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#dreviewername p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#dreviewerdishes {
+	background-color: rgb(121, 54, 81);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#dreviewerdishes p{
+	color: rgb(240, 92, 34);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+
+
+.restrevdishtxt{
+	float:right;
+	margin-left: 15px;
+	width: 100px;
+	margin-top: -10px;
+}
+.restrevdishtxt p {
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: left;
+}
+.restrevdishrate{
+	background-color: rgb(255, 255, 255);
+	margin-top: -10px;
+	width: 210px;
+	margin-left: 5px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+.restrevdishrate p {
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: right;
+}
+
+
+.dishrevdishtxt{
+	float:right;
+	margin-left: 15px;
+	width: 100px;
+	margin-top: -5px;
+}
+.dishrevdishtxt p {
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: left;
+}
+.dishrevdishrate{
+	background-color: rgb(255, 255, 255);
+	margin-top: -10px;
+	width: 210px;
+	margin-left: 5px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.dishrevdishrate p {
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: right;
+}
+.dishrevrestname{
+	border-size: 2px;
+	border-style: solid;
+	border-color: rgb(192, 62, 26);
+	margin-top: -15px;
+	width: 206px;
+	margin-left: 5px;
+	height: 26px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+.dishrevrestname p{
+	color: rgb(240, 92, 34);
+	font-family: 'Questrial', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0;
+}
+
