@@ -3,8 +3,28 @@
 <h1>Welcome, user <strong><%=current_user.username%></strong>!</h1>
 <h2>Personal motto: <em><%=current_user.motto%></em></h2>
 <h2>Favorites:</h2>
-<h2>Following:</h2>
-<h2>Followers:</h2>
+<h2><%=current_user.friends.count%> Following: </h2>
+	<ul>
+	<%current_user.friends.each do |friend|%>
+	<%="<li><a href='/user/#{friend.id}'>#{friend.username}</a></li>" %>	
+	<%end%>
+	</ul>
+<h2><%=current_user.followers.count%> Followers:</h2>
+	<ul>
+	<%current_user.followers.each do |follower|%>
+	<%="<li><a href='/user/#{follower.id}'>#{follower.username}</a></li>" %>	
+	<%end%>
+	</ul>
+
+<h2>Latest dishes from your network:</h2>
+<% current_user.recent_friend_reviews.each do |review| %>
+	<%= "<a href='/user/#{review.user_id}'>#{review.user.username}</a> dished on <a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
+		<%= "<ul>" %>
+			<%= "<li>\"<em>#{review.description}</em>\"</li>" %>	
+			<%= "<li>#{review.rating}/5 (average rating: #{review.dish.average_rating})</li>" %>
+		<%= "</ul>" %>
+<% end %>
+
 <h2>Your latest dishes:</h2>
 <% current_user.reviews.each do |review| %>
 <%= "<a href='/item/#{review.dish_id}/reviews'>#{review.dish.name}</a> from <a href='/menu/#{review.dish.menu_id}'>#{review.dish.menu.name}</a>"%>
@@ -14,6 +34,8 @@
 		<%= "<li><a href='/item/#{review.dish_id}/review'>Edit/Remove</a></li>" %>
 	<%= "</ul>" %>
 <% end %>
+
+
 
 <a href='/update/user/<%=current_user.id%>'>Change profile details</a>
 <a href='/'>Log out</a>

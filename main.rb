@@ -175,13 +175,17 @@ get '/user/:other_id' do
 end
 
 get '/user/:other_id/follow' do
-	UserFriendship.create(user_id: current_user.id, user_friend_id: params[:other_id])
-	erb :public_profile
+	unless current_user.follows?(current_other.id)
+		UserFriendship.create(user_id: current_user.id, user_friend_id: params[:other_id])
+	end
+	redirect to "/user/#{params[:other_id]}"
 end
 
 get '/user/:other_id/unfollow' do
-	UserFriendship.where(user_id: current_user.id, user_friend_id: params[:other_id]).first.destroy
-	erb :public_profile
+	unless !current_user.follows?(current_other.id)	
+		UserFriendship.where(user_id: current_user.id, user_friend_id: params[:other_id]).first.destroy
+	end
+	redirect to "/user/#{params[:other_id]}"
 end
 
 def current_user

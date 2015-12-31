@@ -21,6 +21,12 @@ class User < ActiveRecord::Base
 	def follows?(user_id)
 		friends.any?{|friend| friend.id == user_id}
 	end
+
+	def recent_friend_reviews(quantity=5)
+		friend_reviews = self.friends.map { |friend| friend.reviews }
+		friend_reviews.flatten!
+		friend_reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+	end
 end
 
 class Review < ActiveRecord::Base
