@@ -48,7 +48,8 @@
 						<%="<div class='restrevbox'>"%>
 							<%="<div id='reviewerid'>"%>
 								<%="<div id='reviewerphoto'>"%>
-									<%="<p>photo</p>"%>
+								<!-- TODO: move inline style on <img> to css  -->
+									<%="<img style='width: 50px; height: 70px' src='/img/avatars/#{menu.highest_review.user_id}.png'>"%>
 								<%="</div>"%>
 								<%="<div id='reviewername'>"%>
 								<%="	<p>#{menu.highest_review.user.username}</p>"%>
@@ -97,7 +98,8 @@
 						<%="<div class='dishrevbox'> "%>
 							<%="<div id='reviewerid'> "%>
 							<%="	<div id='dreviewerphoto'> "%>
-								<%="	<p>photo</p> "%>
+							<!-- TODO: move inline style on <img> to css  -->
+								<%="<img style='width: 50px; height: 70px' src='/img/avatars/#{review.user_id}.png'> "%> 
 								<%="</div> "%>
 								<%="<div id='dreviewername'> "%>
 								<%="	<p>#{review.user.username}</p> "%>
