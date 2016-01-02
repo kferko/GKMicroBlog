@@ -66,8 +66,8 @@ class Menu < ActiveRecord::Base
 
 	def average_rating
 		all_ratings = self.reviews.map{|review| review.rating}
-		average_review = all_ratings.reduce(0){|sum, rating| sum + rating} / all_ratings.count.to_f
-		'%.1f' % average_review
+		average_rating = all_ratings.reduce(0){|sum, rating| sum + rating} / all_ratings.count.to_f
+		'%.0f' % average_rating # rounds to nearest integer for now
 	end
 end
 
@@ -86,8 +86,8 @@ class Dish < ActiveRecord::Base
 
 	def average_rating 
 		if has_reviews?
-			average_review = ratings.reduce(0){|sum, rating| sum + rating} / ratings.count.to_f
-			'%.1f' % average_review
+			average_rating = ratings.reduce(0){|sum, rating| sum + rating} / ratings.count.to_f
+			'%.0f' % average_rating # rounds to nearest integer for now
 		else
 			"NA"
 		end
