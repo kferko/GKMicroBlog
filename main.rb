@@ -34,6 +34,10 @@ get '/modal_reviewentry' do
 	erb :modal_reviewentry
 end
 
+get '/modal_usernew' do
+	erb :modal_usernew
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear

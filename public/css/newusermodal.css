@@ -17,18 +17,18 @@
 
 
 /* ------ WRITE REVIEW MODAL ------ */
-.writereview {
-	border:5px solid rgba(240, 92, 34, .5);
+.newusermodal {
+	border:5px solid rgba(255, 219, 148, .5);
 	border-radius: 12px;
 	background-color: rgb(255, 248, 232);
 	width: 300px;
-	height: 310px;
+	height: 350px;
 	display:inline;
 	float:right;
 	position: relative;
-	margin: 10px;
+	margin: 0px;
 }
-#wrheader {
+#nuheader {
 	background-color: rgb(240, 92, 34);
 	width: 290px;
 	height: 30px;
@@ -40,97 +40,52 @@
 	justify-content:center;
 	align-items:center;
 }
-#wrheader p{
-	color: rgb(255, 255, 255);
+#nuheader p{
+	color: rgb(192, 62, 26);
 	font-family: 'Questrial', sans-serif;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: .5px;
 	margin: 0;
 }
-.wrbox{
+.nubox{
 	background-color: rgb(255, 255, 255);
 	width: 290px;
-	height: 155px;
+	height: 255px;
 	position: relative;
 	margin: 0px 5px 0px 5px;
 	display:flex;
 }
-#wrid {
-	background-color: rgb(73, 152, 152);
-	width: 50px;
-	height: 110px;
-	margin-left: 10px;
-	/*margin-top: 12px;*/
-}
-#wrphoto {
-	background-color: rgb(207, 207, 207);
-	width: 50px;
-	height: 70px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-#wrphoto p{
-	color: rgb(240, 92, 34);
-	font-family: 'Questrial', sans-serif;
-	font-size: 12px;
-	text-align: center;
-}
-#wrname{
-	background-color: rgb(192, 62, 26);
-	width: 50px;
-	height: 40px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-#wrname p{
-	color: rgb(255, 255, 255);
-	font-family: 'Questrial', sans-serif;
-	font-size: 12px;
-	text-align: center;
-}
 
-.wrtxt{
+.nutxt{
 	float:right;
 	margin-left: 25px;
 	width: 180px;
 	margin-top: 10px;
 }
-.wrtxt p{
-	color: rgb(121, 54, 81);
+.nutxt p{
+	color: rgb(81, 96, 113);
 	font-family: 'Questrial', sans-serif;
 	font-size: 12px;
 	line-height: 16px;
 }
 
-.wrrate{
-	background-color: rgb(255, 255, 255);
-	margin-top: -10px;
-	width: 290px;
-	margin-left: 5px;
-	height: 40px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-.wrcloseaddbar{
+.nucloseaddbar{
 	width: 290px;
 	margin-left: 20px;
 	display:flex;
 	justify-content:flex-end;
 	margin-top: 8px;
 }
-#wrcloseicon{
-	margin: 5px;
+#nucloseicon{
+	margin: 5px 15px 5px 15px;
 	width: 60px;
 	height: 30px;
 	background-image: url('/img/closeknife.svg');
 	background-repeat:no-repeat;
 	background-position: center;
 }
-#wricon{
+#nuicon{
 	margin: 5px 15px 5px 15px;
 	width: 50px;
 	height: 30px;
@@ -140,26 +95,42 @@
 }
 
 
-.wrselect {
-	background-color: rgb(255, 255, 255);
-	width: 260px;
-	height: 50px;
-	position: relative;
-	margin: 0px 5px 0px 5px;
-	display:flex;
-    padding: 5px 15px 5px 15px;
+#ef {
+	height: 25px;
+	width: 230px;
 }
-.wrselect p {
-    width: 10%;
-    color: rgb(73, 152, 152);
-    font-family: 'Questrial', sans-serif;
-    font-size: 12px;
-    margin-left: -10px;
+
+::-webkit-input-placeholder {
+   	color: rgb(131, 200, 191);
+   	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
 }
-#wrrate {
-    display: inline;
-    margin-right: 15px;
+::-moz-placeholder {
+    color: rgb(131, 200, 191);
+   	font-family: 'Questrial', sans-serif;
+	font-size: 12px;  
 }
+:-ms-input-placeholder {  
+    color: rgb(131, 200, 191);
+   	font-family: 'Questrial', sans-serif;
+	font-size: 12px;  
+}
+
+input[type=nusubmit] {
+	color: rgb(240, 92, 34);
+   	font-family: 'Questrial', sans-serif;
+	font-size: 12px; 
+	font-weight: bold;
+	height: 30px;
+	margin: 5px 15px 5px 5px;
+    /*padding:5px 15px; */
+    background: rgb(192, 62, 26); 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 12px;
+    text-align: center; 
+}
+
 
 
 .lightbox .box {
