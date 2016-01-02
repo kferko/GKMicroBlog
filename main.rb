@@ -26,6 +26,14 @@ get '/restaurant_home' do
 	erb :restaurant_home
 end
 
+get '/modaltest' do
+	erb :modaltest
+end
+
+get '/modal_reviewentry' do
+	erb :modal_reviewentry
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear

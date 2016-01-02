@@ -1,0 +1,163 @@
+/* Making sure that the modal window is hidden by defaul and on top of all other elements on the website. */
+.modalwindow {
+  position:fixed;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+ 
+/* Customize your modal window here, you can add background image too */
+#modal {
+  width:500px;
+  height:203px;
+  background: #dd3333;
+}
+
+
+/* ------ WRITE REVIEW MODAL ------ */
+.writereview {
+	border:5px solid rgba(240, 92, 34, .5);
+	border-radius: 12px;
+	background-color: rgb(255, 248, 232);
+	width: 300px;
+	height: 310px;
+	display:inline;
+	float:right;
+	position: relative;
+	margin: 10px;
+}
+#wrheader {
+	background-color: rgb(240, 92, 34);
+	width: 290px;
+	height: 30px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	position: relative;
+	margin: 5px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#wrheader p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: .5px;
+	margin: 0;
+}
+.wrbox{
+	background-color: rgb(255, 255, 255);
+	width: 290px;
+	height: 155px;
+	position: relative;
+	margin: 0px 5px 0px 5px;
+	display:flex;
+}
+#wrid {
+	background-color: rgb(73, 152, 152);
+	width: 50px;
+	height: 110px;
+	margin-left: 10px;
+	/*margin-top: 12px;*/
+}
+#wrphoto {
+	background-color: rgb(207, 207, 207);
+	width: 50px;
+	height: 70px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#wrphoto p{
+	color: rgb(240, 92, 34);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+#wrname{
+	background-color: rgb(192, 62, 26);
+	width: 50px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#wrname p{
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+.wrtxt{
+	float:right;
+	margin-left: 25px;
+	width: 180px;
+	margin-top: 10px;
+}
+.wrtxt p{
+	color: rgb(121, 54, 81);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.wrrate{
+	background-color: rgb(255, 255, 255);
+	margin-top: -10px;
+	width: 290px;
+	margin-left: 5px;
+	height: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.wrcloseaddbar{
+	width: 290px;
+	margin-left: 20px;
+	display:flex;
+	justify-content:flex-end;
+	margin-top: 8px;
+}
+#wrcloseicon{
+	margin: 5px;
+	width: 60px;
+	height: 30px;
+	background-image: url('/img/closeknife.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+#wricon{
+	margin: 5px 15px 5px 15px;
+	width: 50px;
+	height: 30px;
+	background-image: url('/img/add.svg');
+	background-repeat:no-repeat;
+	background-position: center;
+}
+
+
+.wrselect {
+	background-color: rgb(255, 255, 255);
+	width: 260px;
+	height: 50px;
+	position: relative;
+	margin: 0px 5px 0px 5px;
+	display:flex;
+    padding: 5px 15px 5px 15px;
+}
+.wrselect p {
+    width: 10%;
+    color: rgb(73, 152, 152);
+    font-family: 'Questrial', sans-serif;
+    font-size: 12px;
+    margin-left: -10px;
+}
+#wrrate {
+    display: inline;
+    margin-right: 15px;
+}
+
