@@ -1,2 +1,4 @@
 db/schema.rb
 dddb.sqlite3
+*.DS_Store
+*.swp
