@@ -5,11 +5,19 @@
 	<meta charset="utf-8">
 	<title><%= @title %></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/modal.js"></script>
+	<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/modal.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/css/userpage.css">
 	<link rel="stylesheet" type="text/css" href="/css/ownerpage.css">
-		<link rel="stylesheet" type="text/css" href="/css/signin.css">
+	<link rel="stylesheet" type="text/css" href="/css/signin.css">
+	<link rel="stylesheet" type="text/css" href="/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="/css/newownermodal.css">
+	<link rel="stylesheet" type="text/css" href="/css/newusermodal.css">
 	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300|Questrial' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -24,10 +32,92 @@
 				</form>
 	    	</div>
 	</div>
-	<a href='/'><div class="logo"></div></a>
+	<div class="logo"><a href="/"><input type='image' id='logo' img src="/img/logo.svg"></a></div>
 				<!-- start ruby -->
 					<%= yield %>	
 				<!-- end ruby -->
 	</div>
+<div class="lightbox" id="newuser">
+  	<div class="box">
+   		<div class="newusermodal">
+			<div id="nuheader">
+				<p>become a new user</p>
+			</div>
+			<div class="nubox">
+				<div class="nutxt">
+					<form method="POST" action="/create-user">
+						<p>Create a unique username...</p>							<input id="ef" type="text" name="username" placeholder="username" required>
+						<p>Create a unique password...</p>
+						<input id="ef" type="password" name="password" placeholder="password" required>
+						<p>Confirm your new password!</p>
+						<input id="ef" type="password" name="password_confirmation" placeholder="Confirm password" required>
+					</form>
+				</div>
+			</div>
+				<div class="nucloseaddbar">
+					<a href="#" class="close"><div id="nucloseicon">
+					</div></a>
+					<input id="subbutt" type="nusubmit" value="create new user!">
+				</div>
+		</div>
+	</div>
+</div>
+<div class="lightbox" id="newowner">
+  	<div class="box">
+		<div class="newownermodal">
+			<div id="noheader">
+				<p>become a new owner</p>
+			</div>
+			<div class="nobox">
+				<div class="notxt">
+					<form method="POST" action="/create-owner">
+					<p>Create a unique username...</p>
+					<input id="ef" type="text" name="username" placeholder="username" required>		
+					<p>Create a unique password...</p>
+					<input id="ef" type="password" name="password" placeholder="password" required>
+					<p>Confirm your new password!</p>
+					<input id="ef" type="password" name="password_confirmation" placeholder="Confirm password" required>
+					</form>
+				</div>
+			</div>
+			<div class="nocloseaddbar">
+				<a href="#" class="close"><div id="nocloseicon"></div></a>
+				<input id="subbutt" type="nosubmit" value="create new owner!">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="lightbox" id="newreview">
+  	<div class="box">
+		<div class="writereview">
+			<div id="wrheader">
+				<p>Name of Dish to Review</p>
+			</div>
+			<div class="wrbox">
+				<div id="wrid">
+					<div id="wrphoto">
+						<p>photo</p>
+					</div>
+					<div id="wrname">
+						<p>name</p>
+					</div>
+				</div>
+				<div class="wrtxt">
+					<p>user enters text here user enters text here</p>
+				</div>
+			</div>
+				<div class="wrselect">
+					<object id="wrrate" type="image/svg+xml" data="/img/heart.svg"></object>
+					<object id="wrrate" type="image/svg+xml" data="/img/cam.svg"></object>
+					<object id="wrrate" type="image/svg+xml" data="/img/plateszero.svg"></object><p>0</p>
+				</div>
+					<div class="wrcloseaddbar">
+						<a href="#" class="close"><div class="wrcloseicon"></div></a>
+						<a href="#" class="add to database"><div class="wricon"></div></a>
+					</div>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>

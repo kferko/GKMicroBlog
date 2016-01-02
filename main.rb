@@ -22,6 +22,22 @@ get '/owner_home_css' do
 	erb :owner_home_css
 end
 
+get '/restaurant_home' do
+	erb :restaurant_home
+end
+
+get '/modaltest' do
+	erb :modaltest
+end
+
+get '/modal_reviewentry' do
+	erb :modal_reviewentry
+end
+
+get '/modal_usernew' do
+	erb :modal_usernew
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear
