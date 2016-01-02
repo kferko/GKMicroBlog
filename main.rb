@@ -22,6 +22,10 @@ get '/owner_home_css' do
 	erb :owner_home_css
 end
 
+get '/restaurant_home' do
+	erb :restaurant_home
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear
