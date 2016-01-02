@@ -6,11 +6,11 @@
 	display: flex;
 	justify-content:flex-end;
   	/*align-items: center;*/
-  	z-index: 12;
+  	z-index: 34;
   	position: absolute;
 }
 .topsignin {
-	z-index: 5;
+	z-index: 34;
 	position: absolute;
 }
 .signinform {
