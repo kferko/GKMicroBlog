@@ -27,12 +27,21 @@ class User < ActiveRecord::Base
 		friend_reviews.flatten!
 		friend_reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
 	end
+
+	def most_recent_review
+		self.reviews.sort_by{ |review| review.id }.reverse.first
+	end
 end
 
 class Review < ActiveRecord::Base
 # each user review is for one specific dish
 	belongs_to :user
 	belongs_to :dish
+	belongs_to :menu
+
+	def self.most_recent(quantity=4)
+		self.all.sort_by{ |review| review.id }.reverse[0..quantity-1]
+	end
 end
 
 class Owner < ActiveRecord::Base
@@ -49,9 +58,16 @@ class Menu < ActiveRecord::Base
 # each menu belongs to an ower and contains several dishes
 	belongs_to :owner
 	has_many :dishes
+	has_many :reviews
 
-	def menu_status
+	def highest_review 
+		self.reviews.sort_by{|review| review.rating }.reverse.first
+	end
 
+	def average_rating
+		all_ratings = self.reviews.map{|review| review.rating}
+		average_rating = all_ratings.reduce(0){|sum, rating| sum + rating} / all_ratings.count.to_f
+		'%.0f' % average_rating # rounds to nearest integer for now
 	end
 end
 
@@ -70,7 +86,8 @@ class Dish < ActiveRecord::Base
 
 	def average_rating 
 		if has_reviews?
-			ratings.reduce(0){|sum, rating| sum + rating} / ratings.count.to_f
+			average_rating = ratings.reduce(0){|sum, rating| sum + rating} / ratings.count.to_f
+			'%.0f' % average_rating # rounds to nearest integer for now
 		else
 			"NA"
 		end

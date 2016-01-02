@@ -1,0 +1,143 @@
+<div class="pagepeak_top"><img src="/img/menupeak.png"></div>
+<div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
+<div class="pagebott_fill"></div>
+<div class="bodywhite">
+	<div id="bodywhite_left">
+		<div class="leftbody">
+			<div class="headerlcb">
+				<div id="lhead">
+					<h1>what is</h1><p>-</p><h2>dishdish</h2><h3>?</h3>
+				</div>
+				<div id="lheadbod">
+					<p>This is some descriptive copy</p>
+				</div>
+				<div class="headerlcbw"></div>
+				<div id="lsubhead">
+				<img src="/img/fadebubbblue.png">
+				<h1>featured</h1><h2>dishes</h2>
+				</div>
+				<div class="reviewsleft">
+					<%Menu.all[0..3].each do |menu| # take first four menus %>
+					<!-- generate a div.restreview based on the best review from each menu -->
+					<!-- begin restaurant review card -->
+					<%="<div class='restreview'>"%>
+						<%=" <div id='rrheader'>"%>
+							<%="<p>#{menu.name}</p>"%>
+							<%="<object id='flag' type='image/svg+xml' data='/img/italian.svg'></object>"%>
+						<%="</div>"%>
+						<%="<div class='restreviconbar'>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='restrevdish'>"%>
+							<%="	<p>#{menu.highest_review.title}</p>"%>
+						<%="</div>"%>
+						<%="<div class='restrevbox'>"%>
+							<%="<div id='reviewerid'>"%>
+								<%="<div id='reviewerphoto'>"%>
+									<%="<p>photo</p>"%>
+								<%="</div>"%>
+								<%="<div id='reviewername'>"%>
+								<%="	<p>#{menu.highest_review.user.username}</p>"%>
+								<%="</div>"%>
+								<%="<div id='reviewerdishes'>"%>
+								<%="	<p>#{menu.highest_review.user.reviews.count}</p>"%>
+								<%="</div>"%>
+							<%="</div>"%>
+							<%="<div class='restrevdishtxt'>"%>
+							<%="	<p>#{menu.highest_review.description}</p>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='restrevdishrate'>"%>
+							<%="<object type='image/svg+xml' data='/img/hatfour.svg'></object><p>#{menu.average_rating}</p>"%>
+						<%="</div>"%>
+					<%="</div>"%>
+				    <!-- end restauarant review card	 -->
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="bodywhite_right">
+		<div class="rightbody">
+			<div class="headerrcb">
+				<div id="rhead">
+					<h1>how do i</h1><p>-</p><h2>dishdish</h2><h3>?</h3>
+				</div>
+				<div id="rheadbod">
+					<p>This is some descriptive copy</p>
+				</div>
+				<div class="headerrcbw"></div>
+				<div id="rsubhead">
+				<h1>featured</h1><h2>dishes</h2>
+				<img src="/img/fadebubborange.png">
+				</div>
+				<div class="reviewsright">
+				<!-- pull the four most recent dish reviews and generate cards for each  -->
+				<%Review.most_recent.each do |review| # #most_recent by default returns four reviews %>
+					<!-- generate a div.dishreview based on the best review from each menu -->
+					<!-- begin restaurant review card -->
+					<%="<div class='dishreview'> "%>
+						<%="<div id='drheader'> "%>
+							<%="<p>#{review.dish.name}</p> "%>
+						<%="</div> "%>
+						<%="<div class='dishrevbox'> "%>
+							<%="<div id='reviewerid'> "%>
+							<%="	<div id='dreviewerphoto'> "%>
+								<%="	<p>photo</p> "%>
+								<%="</div> "%>
+								<%="<div id='dreviewername'> "%>
+								<%="	<p>#{review.user.username}</p> "%>
+								<%="</div> "%>
+								<%="<div id='dreviewerdishes'> "%>
+								<%="	<p>#{review.user.reviews.count}</p> "%>
+								<%="</div> "%>
+							<%="</div> "%>
+							<%="<div class='dishrevdishtxt'> "%>
+								<%="<p>#{review.description}</p> "%>
+							<%="</div> "%>
+						<%="</div> "%>
+						<%="<div class='dishrevdishrate'> "%>
+							<%="<object type='image/svg+xml' data='/img/cam.svg'></object> "%>
+							<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p> "%>
+						<%="</div> "%>
+						<%="<div class='dishreviconbar'> "%>
+							<%="<div id='restrevicon'> "%>
+							<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object> "%>
+							<%="</div> "%>
+							<%="<div id='restrevicon'> "%>
+							<%="<object type='image/svg+xml' data='/img/map.svg'></object> "%>
+							<%="</div> "%>
+							<%="<div id='restrevicon'> "%>
+							<%="<object type='image/svg+xml' data='/img/heart.svg'></object> "%>
+							<%="</div> "%>
+							<%="<div id='restrevicon'> "%>
+							<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object> "%>
+							<%="</div> "%>
+							<%="<div id='restrevicon'> "%>
+							<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object> "%>
+							<%="</div> "%>
+						<%="</div> "%>
+						<%="<div class='dishrevrestname'> "%>
+							<%="<p>#{review.menu.name}</p> "%>
+						<%="</div> "%>
+					<%="</div> "%>
+					<!-- end div.dishreview -->
+					<%end%>	
+				</div>
+		</div>
+	</div>
+</div>

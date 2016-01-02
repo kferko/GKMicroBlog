@@ -11,7 +11,7 @@ require './models'
 set :sessions, :true
 
 get '/' do
-	erb :home
+	erb :home_ruby
 end
 
 get '/user_home_css' do
