@@ -43,7 +43,7 @@ Review.create(user_id: 2, dish_id: 4, menu_id: 2, title: "You gotta try Pat's at
 Review.create(user_id: 1, dish_id: 5, menu_id: 3, title: "Perfect Valentine's Night", description: "I still dream about this dish. You will never think of gnocchi in the same way after experiencing it in the rich brown butter. Get a reservation right now!", rating: 4)
 Review.create(user_id: 2, dish_id: 6, menu_id: 3, title: "Best italian in the city", description: "An outstanding dish. The almonds and truffle were perfectly balanced and just left me wanting more.", rating: 5)
 Review.create(user_id: 3, dish_id: 7, menu_id: 4, title: "Vegetarian paradise", description: "This was easily the best seitan I've ever had. The texture was sublime. Who needs meat when you have Vedge?", rating: 5)
-Review.create(user_id: 4, dish_id: 8, menu_id: 4, title: "Brilliant take on veggies", description: "You might think that ordering a carrot as an entree is bizarre (well, I did), but have no fear. This dish was so playful, creative, exciting, and suprisingly satisfying that I can't wait to order it again! ", rating: 4)
+Review.create(user_id: 4, dish_id: 8, menu_id: 4, title: "Brilliant take on veggies", description: "You might think that ordering a carrot as an entree is bizarre (well, I did), but have no fear. This dish was so suprisingly satisfying that I can't wait to order it again! ", rating: 4)
 
 # add user_friendships
 UserFriendship.create(user_id: 1, user_friend_id: 2)
