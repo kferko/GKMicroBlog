@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
 		friend_reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
 	end
 
+	def recent_reviews(quantity=2)
+		self.reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+	end
+
 	def most_recent_review
 		self.reviews.sort_by{ |review| review.id }.reverse.first
 	end

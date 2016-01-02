@@ -18,6 +18,10 @@ get '/user_home_css' do
 	erb :user_home_css
 end
 
+get '/user_home_css_ruby' do
+	erb :user_home_css_ruby
+end
+
 get '/owner_home_css' do
 	erb :owner_home_css
 end
