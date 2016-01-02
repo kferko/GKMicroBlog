@@ -81,7 +81,7 @@
 	margin: 5px 15px 5px 15px;
 	width: 60px;
 	height: 30px;
-	background-image: url('/img/closeknife.svg');
+	background-image: url('/img/closeknife.png');
 	background-repeat:no-repeat;
 	background-position: center;
 }
@@ -89,7 +89,7 @@
 	margin: 5px 15px 5px 15px;
 	width: 50px;
 	height: 30px;
-	background-image: url('/img/add.svg');
+	background-image: url('/img/add.png');
 	background-repeat:no-repeat;
 	background-position: center;
 }
