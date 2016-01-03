@@ -30,6 +30,10 @@ get '/restaurant_home' do
 	erb :restaurant_home
 end
 
+get '/restaurant_home_ruby' do
+	erb :restaurant_home_ruby
+end
+
 get '/modaltest' do
 	erb :modaltest
 end
