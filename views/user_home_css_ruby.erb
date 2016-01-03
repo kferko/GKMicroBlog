@@ -1,6 +1,4 @@
 <div class="pagepeak_top"><img src="/img/menupeak.png"></div>
-<div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
-<div class="pagebott_fill"></div>
 <div class="bodywhite">
 	<div id="bodywhite_left">
 		<div class="leftbody">
@@ -131,11 +129,12 @@
 				<div class="horizbarcont"><div id="horizbar"></div></div>
 				<!-- #friendsreviewroll displays recent reviews by friends -->
 				<!-- TODO: fix scrolling and overflow into footer -->
-				<div id="friendsreviewroll" class="reviewsright ">
+				<div id="friendsreviewroll" class="userreviewsright ">
 					<div id="rsubhead">
 						<h3>latest</h3><h4>dishes</h4>
 					</div>
 					<!-- for each of the recent friend reviews, populate a review card -->
+					<div class="friendsrev">
 					<%current_user.recent_friend_reviews(4).each do |review|%>
 					<%="<div class='dishreview'>"%>
 						<%="<div id='drheader'>"%>
@@ -186,7 +185,25 @@
 					<%="</div>"%>
 					<!-- end review card -->
 					<%end%>
+					</div>
 				</div>
 		</div>
+	</div>
+</div>
+</div>
+<div class="footer">
+	<div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
+	<div class="pagebott_fill"></div>
+	<div class="social">
+		<i class="flaticon-facebook31"></i>
+		<i class="flaticon-twitter21"></i>
+		<i class="flaticon-whatsapp"></i>
+		<i class="flaticon-google29"></i>
+		<i class="flaticon-pin28"></i>
+		<i class="flaticon-youtube17"></i>
+		<i class="flaticon-linkedin11"></i>
+	</div>
+	<div class="copyright">
+		<p>&copy; 2016 number2pencil,llc dba dishdish, inc.</p>
 	</div>
 </div>
