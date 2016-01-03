@@ -4,8 +4,7 @@
 		<div class="leftbody">
 			<div class="headerlcb">
 				<div id="lhead">
-					<%test_menu = Menu.first%>
-					<h1><%=test_menu.name.downcase%></h1><p>-</p><h2>menu</h2>
+					<h1><%=current_menu.name.downcase%></h1><p>-</p><h2>menu</h2>
 				</div>
 				<div class="headerlcbw"></div>
 				<div class="restleft">
@@ -31,14 +30,14 @@
 					</div>
 					<div class="restdescrip">
 						<p>
-							<%=test_menu.description%>	
+							<%=current_menu.description%>	
 						</p>
 					</div>
 					<div class="accordion">
-					    <h2><%=test_menu.course1.downcase%></h2>
+					    <h2><%=current_menu.course1.downcase%></h2>
 						    <div class="pane">
 						    <!-- for each dish on the menu where course = 1, populate a dishselect div -->
-						    <%test_menu.dishes.where(course: 1).each do |dish|%>
+						    <%current_menu.dishes.where(course: 1).each do |dish|%>
 						        <%="<div class='dishselect'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
@@ -50,9 +49,9 @@
 					        <!-- end dishselect div -->
 					        <%end%>
 						    </div>
-					    <h3><%=test_menu.course2.downcase%></h3>
+					    <h3><%=current_menu.course2.downcase%></h3>
 						    <div class="pane">
-					        <%test_menu.dishes.where(course: 2).each do |dish|%>
+					        <%current_menu.dishes.where(course: 2).each do |dish|%>
 						        <%="<div class='dishselect'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
@@ -63,9 +62,9 @@
 						        <%="</div>"%>
 	   				        <%end%> 
 						    </div>
-						<h3><%=test_menu.course3.downcase%></h3>
+						<h3><%=current_menu.course3.downcase%></h3>
 						    <div class="pane">
-						    <%test_menu.dishes.where(course: 3).each do |dish|%>
+						    <%current_menu.dishes.where(course: 3).each do |dish|%>
 						        <%="<div class='dishselect'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
@@ -76,9 +75,9 @@
 						        <%="</div>"%>
 					        <%end%>
 						    </div>
-						<h4><%=test_menu.course4.downcase%></h4>
+						<h4><%=current_menu.course4.downcase%></h4>
 						    <div class="pane">
-						    <%test_menu.dishes.where(course: 4).each do |dish|%> 
+						    <%current_menu.dishes.where(course: 4).each do |dish|%> 
 						        <%="<div class='dishselect'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
@@ -98,7 +97,7 @@
 		<div class="rightbody">
 			<div class="headerrcb">
 				<div id="rhead">
-					<h1>the latest</h1><h4>vetri</h4><h2>dish</h2><h3>...</h3>
+					<h1>the latest</h1><h4>&nbsp;</h4><h2>dish</h2><h3>...</h3>
 				</div>
 				<div class="headerrcbw"></div>
 				<div class="menuright">
@@ -109,186 +108,59 @@
 					</div>
 				</div>
 				<div class="reviewsright">
-					<div class="dishreview">
-						<div id="drheader">
-							<p>Fettuccine with Octopus Ragu</p>
-						</div>
-						<div class="dishrevbox">
-							<div id="reviewerid">
-								<div id="dreviewerphoto">
-									<p>photo</p>
-								</div>
-								<div id="dreviewername">
-									<p>name</p>
-								</div>
-								<div id="dreviewerdishes">
-									<p># dishes</p>
-								</div>
-							</div>
-							<div class="dishrevdishtxt">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</p>
-							</div>
-						</div>
-						<div class="dishrevdishrate">
-							<object type="image/svg+xml" data="/img/cam.svg"></object>
-							<object type="image/svg+xml" data="/img/platesfour.svg"></object><p>4</p>
-						</div>
-						<div class="dishreviconbar">
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/restaurant.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/map.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/heart.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/alcohol.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/dollarsfour.svg"></object>
-							</div>
-						</div>
-						<div class="dishrevrestname">
-							<p>vetri</p>
-						</div>
-					</div>
-					<div class="dishreview">
-						<div id="drheader">
-							<p>Fettuccine with Octopus Ragu</p>
-						</div>
-						<div class="dishrevbox">
-							<div id="reviewerid">
-								<div id="dreviewerphoto">
-									<p>photo</p>
-								</div>
-								<div id="dreviewername">
-									<p>name</p>
-								</div>
-								<div id="dreviewerdishes">
-									<p># dishes</p>
-								</div>
-							</div>
-							<div class="dishrevdishtxt">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</p>
-							</div>
-						</div>
-						<div class="dishrevdishrate">
-							<object type="image/svg+xml" data="/img/cam.svg"></object>
-							<object type="image/svg+xml" data="/img/platesfour.svg"></object><p>4</p>
-						</div>
-						<div class="dishreviconbar">
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/restaurant.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/map.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/heart.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/alcohol.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/dollarsfour.svg"></object>
-							</div>
-						</div>
-						<div class="dishrevrestname">
-							<p>vetri</p>
-						</div>
-					</div>
-					<div class="dishreview">
-						<div id="drheader">
-							<p>Fettuccine with Octopus Ragu</p>
-						</div>
-						<div class="dishrevbox">
-							<div id="reviewerid">
-								<div id="dreviewerphoto">
-									<p>photo</p>
-								</div>
-								<div id="dreviewername">
-									<p>name</p>
-								</div>
-								<div id="dreviewerdishes">
-									<p># dishes</p>
-								</div>
-							</div>
-							<div class="dishrevdishtxt">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</p>
-							</div>
-						</div>
-						<div class="dishrevdishrate">
-							<object type="image/svg+xml" data="/img/cam.svg"></object>
-							<object type="image/svg+xml" data="/img/platesfour.svg"></object><p>4</p>
-						</div>
-						<div class="dishreviconbar">
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/restaurant.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/map.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/heart.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/alcohol.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/dollarsfour.svg"></object>
-							</div>
-						</div>
-						<div class="dishrevrestname">
-							<p>vetri</p>
-						</div>
-					</div>
-					<div class="dishreview">
-						<div id="drheader">
-							<p>Fettuccine with Octopus Ragu</p>
-						</div>
-						<div class="dishrevbox">
-							<div id="reviewerid">
-								<div id="dreviewerphoto">
-									<p>photo</p>
-								</div>
-								<div id="dreviewername">
-									<p>name</p>
-								</div>
-								<div id="dreviewerdishes">
-									<p># dishes</p>
-								</div>
-							</div>
-							<div class="dishrevdishtxt">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</p>
-							</div>
-						</div>
-						<div class="dishrevdishrate">
-							<object type="image/svg+xml" data="/img/cam.svg"></object>
-							<object type="image/svg+xml" data="/img/platesfour.svg"></object><p>4</p>
-						</div>
-						<div class="dishreviconbar">
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/restaurant.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/map.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/heart.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/alcohol.svg"></object>
-							</div>
-							<div id="restrevicon">
-							<object type="image/svg+xml" data="/img/dollarsfour.svg"></object>
-							</div>
-						</div>
-						<div class="dishrevrestname">
-							<p>vetri</p>
-						</div>
-					</div>
+				<!-- for each review of a dish from this menu, populate a review card -->
+					<%current_menu.recent_reviews.each do |review|%>
+					<%="<div class='dishreview'>"%>
+						<%="<div id='drheader'>"%>
+							<%="<p><a href='/dish/#{review.dish.id}'>#{review.dish.name}</a></p>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevbox'>"%>
+							<%="<a href='/user/#{review.user_id}'>"%>
+								<%="<div id='reviewerid'>"%>
+									<%="<div id='dreviewerphoto'>"%>
+										<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{review.user.id}.png'></p>"%>
+									<%="</div>"%>
+									<%="<div id='dreviewername'>"%>
+										<%="<p>#{review.user.username}</p>"%>
+									<%="</div>"%>
+									<%="<div id='dreviewerdishes'>"%>
+										<%="<p>#{review.user.reviews.count}</p>"%>
+										<!-- TODO: there should be a line break here!!!! -->
+										<%="<p>&nbsp;dishes</p>"%>
+									<%="</div>"%>
+								<%="</a>"%>
+							<%="</div>"%>
+							<%="<div class='dishrevdishtxt'>"%>
+								<%="<p>#{review.description}</p>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevdishrate'>"%>
+							<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
+							<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p>"%>
+						<%="</div>"%>
+						<%="<div class='dishreviconbar'>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevrestname'>"%>
+							<%="<p><a href='/menu/#{review.menu_id}'>#{review.menu.name}</a></p>"%>
+						<%="</div>"%>
+					<%="</div>"%>
+					<!-- end review card -->	
+					<%end%>
 				</div>
 		</div>
 	</div>

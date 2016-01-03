@@ -103,6 +103,14 @@ class Menu < ActiveRecord::Base
 		average_rating = all_ratings.reduce(0){|sum, rating| sum + rating} / all_ratings.count.to_f
 		'%.0f' % average_rating # rounds to nearest integer for now
 	end
+
+	def recent_reviews(quantity=nil)
+		if quantity
+			self.reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+		else
+			self.reviews.sort_by{ |review| review.id }.reverse
+		end
+	end
 end
 
 class Dish < ActiveRecord::Base
