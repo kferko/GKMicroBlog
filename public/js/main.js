@@ -12,4 +12,26 @@ $(function() {
     }
   });
 });
+
+$(".menubutton").click(function(){
+        $(".menulightbox").fadeIn(2000)
+    });
+
+$(".menucloseicon").click(function(){
+        $(".menulightbox").fadeOut(2000)
+    });
+
+$(".button2").click(function(){
+        $("#newowner").fadeIn(2000)
+    });
+$(".button1").click(function(){
+        $("#newuser").fadeIn(2000)
+    });
+$("#nucloseicon").click(function(){
+        $(".lightbox").fadeOut(2000)
+    });
+$("#nocloseicon").click(function(){
+        $(".lightbox").fadeOut(2000)
+    });
+
 });
