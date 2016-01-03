@@ -2,6 +2,7 @@
 <div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
 <div class="pagebott_fill"></div>
 <div class="bodywhite">
+<%test_user = User.find(1)%>
 	<div id="bodywhite_left">
 		<div class="leftbody">
 			<div class="headerlcb">
@@ -10,7 +11,66 @@
 				</div>
 				<div class="headerlcbw"></div>
 				<div class="reviewsleft">
+					<div id="profilephoto">
+						<img src="/img/avatars/<%=test_user.id%>.png">
+						<h3><%=test_user.username%></h3>
+					</div>
 
+					<form id="userupdate" method='post' action='/update/user/<%=test_user.id%>'>
+						<div id="userbasicinfo">
+							<label for="firstname">First Name:</label>
+							<input type="text" name="firstname" value="<%=test_user.id%>">
+							<label for="lastname">Last Name:</label>
+							<input type="text" name="lastname" value="<%=test_user.id%>">
+							<label for="email">Email:</label>
+							<input type="email" name="email" value="<%=test_user.id%>">
+							<label for="phone">Phone:</label>
+							<input type="text" name="phone" value="<%=test_user.id%>">
+							<label for="motto">Motto:</label>
+							<input type="text" name="motto" value="<%=test_user.motto%>" maxlength="50">
+						</div>
+						<h4 id="headeraddressinfo">Address</h4>
+						<div id="useraddressinfo">
+							<div>
+								<label for="street">Street:</label>
+								<input type="text" name="street" value="<%=test_user.id%>">
+							</div>
+							<div>
+								<label for="city">City:</label>
+								<input type="text" name="city" value="<%=test_user.id%>">
+							</div>	
+							<div>	
+								<label for="state">State:</label>
+								<input type="text" name="state" value="<%=test_user.id%>">
+							</div>
+							<div>
+								<label for="zip">Zip:</label>
+								<input type="text" name="zip" value="<%=test_user.id%>">
+							</div>
+						</div>
+						<input type="submit" value="update profile details">
+					</form>
+
+					<div id="passwordchange">
+						<form method="POST" action="/change-password/user/<%=test_user.id%>">
+							<h4>Change password</h4>
+							<div id="userpasswordfields">
+								<div>
+									<label for="old_password">Old password:</label>
+									<input class="passwordinput" type="password" name="old_password" required>
+								</div>
+								<div>
+									<label for="new_password">New password:</label>
+									<input class="passwordinput" type="password" name="new_password" required>
+								</div>
+								<div>
+									<label for="new_password_confirmation">Confirm password:</label>
+									<input class="passwordinput" type="password" name="new_password_confirmation"required>
+								</div>
+							</div>
+							<input id="passwordsubmit" type="submit" value="change password">
+						</form>	
+					</div>
 				</div>
 			</div>
 		</div>
@@ -25,7 +85,7 @@
 				<div class="reviewsright">
 					<div id="rsubhead">
 						<div id="rsubhead_left">
-							<%test_user = User.find(1)%>
+							
 							<h3><%=test_user.friends.count%> following</h3>
 						</div>
 						<div id="rsubhead_right">
