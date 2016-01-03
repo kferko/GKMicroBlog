@@ -46,6 +46,10 @@ get '/modal_usernew' do
 	erb :modal_usernew
 end
 
+get '/public_profile' do
+	erb :public_profile
+end
+
 # get '/' do
 # #  "Welcome to DishDish!"
 # 	session.clear

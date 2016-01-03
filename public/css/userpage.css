@@ -360,9 +360,10 @@ body{
 	width: 480px;
 	margin-right: 20px;
 }
-.reviewsright {
+.userreviewsright {
 	width: 480px;
 	margin-left: 20px;
+
 }
 
 .restreview {
@@ -700,6 +701,7 @@ body{
 	justify-content:center;
 	align-items:center;*/
 	overflow:scroll;
+	overflow-x: hidden;
 }
 .followbox{
 	background-color: rgb(255, 255, 255);
@@ -806,6 +808,19 @@ body{
 	font-size: 18px;
 	margin-top: 50px;
 	padding-left: 20px;
+}
+.friendsrev {
+	width: 500px;
+	height: 320px;
+	float:right;
+	/*position: relative;*/
+	margin: 10px;
+
+/*	display:flex;
+	justify-content:center;
+	align-items:center;*/
+	overflow:scroll;
+	overflow-x: hidden;
 }
 
 /* FORMS */
