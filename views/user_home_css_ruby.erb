@@ -129,12 +129,14 @@
 					</div>
 				</div>
 				<div class="horizbarcont"><div id="horizbar"></div></div>
-				<div class="reviewsright">
+				<!-- #friendsreviewroll displays recent reviews by friends -->
+				<!-- TODO: fix scrolling and overflow into footer -->
+				<div id="friendsreviewroll" class="reviewsright ">
 					<div id="rsubhead">
-						<h3>your</h3><h4>dishes</h4>
+						<h3>latest</h3><h4>dishes</h4>
 					</div>
-					<!-- for each of the users reviews, populate a review card -->
-					<%current_user.recent_reviews(2).each do |review|%>
+					<!-- for each of the recent friend reviews, populate a review card -->
+					<%current_user.recent_friend_reviews(4).each do |review|%>
 					<%="<div class='dishreview'>"%>
 						<%="<div id='drheader'>"%>
 							<%="<p><a href='/dish/#{review.dish.id}'>#{review.dish.name}</a></p>"%>

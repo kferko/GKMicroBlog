@@ -744,6 +744,10 @@ body{
 	text-align: center;
 }
 
+#friendsreviewroll {
+	overflow: scroll;
+}
+
 /* FORMS */
 
 #profilephoto {
