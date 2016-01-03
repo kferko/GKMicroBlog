@@ -19,13 +19,13 @@
 					<form id="userupdate" method='post' action='/update/user/<%=test_user.id%>'>
 						<div id="userbasicinfo">
 							<label for="firstname">First Name:</label>
-							<input type="text" name="firstname" value="<%=test_user.id%>">
+							<input type="text" name="firstname" value="<%=test_user.firstname%>">
 							<label for="lastname">Last Name:</label>
-							<input type="text" name="lastname" value="<%=test_user.id%>">
+							<input type="text" name="lastname" value="<%=test_user.lastname%>">
 							<label for="email">Email:</label>
-							<input type="email" name="email" value="<%=test_user.id%>">
+							<input type="email" name="email" value="<%=test_user.email%>">
 							<label for="phone">Phone:</label>
-							<input type="text" name="phone" value="<%=test_user.id%>">
+							<input type="text" name="phone" value="<%=test_user.phone%>">
 							<label for="motto">Motto:</label>
 							<input type="text" name="motto" value="<%=test_user.motto%>" maxlength="50">
 						</div>
@@ -33,19 +33,19 @@
 						<div id="useraddressinfo">
 							<div>
 								<label for="street">Street:</label>
-								<input type="text" name="street" value="<%=test_user.id%>">
+								<input type="text" name="street" value="<%=test_user.street%>">
 							</div>
 							<div>
 								<label for="city">City:</label>
-								<input type="text" name="city" value="<%=test_user.id%>">
+								<input type="text" name="city" value="<%=test_user.city%>">
 							</div>	
 							<div>	
 								<label for="state">State:</label>
-								<input type="text" name="state" value="<%=test_user.id%>">
+								<input type="text" name="state" value="<%=test_user.state%>">
 							</div>
 							<div>
 								<label for="zip">Zip:</label>
-								<input type="text" name="zip" value="<%=test_user.id%>">
+								<input type="text" name="zip" value="<%=test_user.zip%>">
 							</div>
 						</div>
 						<input type="submit" value="update profile details">
@@ -65,7 +65,7 @@
 								</div>
 								<div>
 									<label for="new_password_confirmation">Confirm password:</label>
-									<input class="passwordinput" type="password" name="new_password_confirmation"required>
+									<input class="passwordinput" type="password" name="new_password_confirmation" required>
 								</div>
 							</div>
 							<input id="passwordsubmit" type="submit" value="change password">

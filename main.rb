@@ -131,8 +131,18 @@ end
 
 # route for updating a User profile detail 
 post '/update/user/:user_id' do
-	User.find(params[:user_id]).update_attributes(params.keys.first => params[params.keys.first])
-	erb :update_user
+	User.find(params[:user_id]).update_attributes(
+		firstname: params[:firstname],
+		lastname: params[:lastname],
+		motto: params[:motto],
+		email: params[:email],
+		phone: params[:phone],
+		street: params[:street],
+		city: params[:city],
+		state: params[:state],
+		zip: params[:zip])
+
+	redirect '/user_home_css_ruby'
 end
 
 # route for updating a User password

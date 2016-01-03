@@ -1,8 +1,51 @@
 # add four users
-User.create(username: "greg", password: "pw", motto: "I love food!")
-User.create(username: "kevin", password: "pwk", motto: "I'm hungry. Let's eat!")
-User.create(username: "foodsnob", password: "pwp", motto: "I love writing mean reviews. This site sucks, btw.")
-User.create(username: "jules", password: "julespw", motto: "Noshing day and night!")
+User.create(username: "greg", 
+			password: "pw", 
+			motto: "I love food!",
+			firstname: "Greg",
+			lastname: "Park",
+			email: "greg@example.com",
+			phone: "215-555-5555",
+			street: "30 S. 17th Street",
+			city: "Philadelphia",
+			state: "PA",
+			zip: "19107")
+
+User.create(username: "kevin", 
+			password: "pw", 
+			motto: "I'm hungry. Let's eat!",
+			firstname: "Kevin",
+			lastname: "Jones",
+			email: "kevin@example.com",
+			phone: "215-555-5555",
+			street: "30 S. 17th Street",
+			city: "Philadelphia",
+			state: "PA",
+			zip: "19107")
+
+User.create(username: "foodsnob",
+			password: "pw",
+			motto: "I love writing mean reviews. This site sucks, btw.",
+			firstname: "Debbie",
+			lastname: "Downer",
+			email: "debbie@example.com",
+			phone: "215-555-5555",
+			street: "30 S. 17th Street",
+			city: "Philadelphia",
+			state: "PA",
+			zip: "19107")
+
+User.create(username: "jules",
+ 			password: "pw",
+ 			motto: "Noshing day and night!",
+ 			firstname: "Jules",
+			lastname: "Park",
+			email: "jules@example.com",
+			phone: "215-555-5555",
+			street: "30 S. 17th Street",
+			city: "Philadelphia",
+			state: "PA",
+			zip: "19107")
 
 # add first owner, menu, and two dishes
 Owner.create(username: "han", password: "hnasty")
