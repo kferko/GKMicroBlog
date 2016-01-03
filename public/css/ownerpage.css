@@ -112,7 +112,7 @@ body{
 	float:right;
 	border-top-left-radius: 36px;
 }
-.pagepeak_bott {
+/*.pagepeak_bott {
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -129,7 +129,7 @@ body{
 	z-index: 4;
 	margin-top: 1050px;
 	position: absolute;
-}
+}*/
 
 
 /* ----- BODY LEFT ----- */
