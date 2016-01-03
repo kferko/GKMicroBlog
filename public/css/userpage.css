@@ -745,7 +745,67 @@ body{
 }
 
 #friendsreviewroll {
-	overflow: scroll;
+	/*overflow: scroll;*/
+}
+
+/* PROFILE DETAILS */
+
+#profilephoto {
+	float: left;
+	text-align: center;
+	width: 180px;
+	height: 200px;
+	margin-top: 10px;
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+}
+
+#profilephoto img {
+	width: 100px;
+	height: 140px;
+}
+
+#publicmotto {
+	font-style: italic;
+}
+
+#publicdetails {
+	font-family: 'Questrial', sans-serif;
+	font-size: 18px;
+	padding-left: 250px;
+	padding-top: 80px;
+}
+
+#publicdetails p {
+	padding: 2px 0px;
+	margin: 2px 0px;
+}
+
+#followdetails {
+	font-family: 'Questrial', sans-serif;
+	font-size: 14px;
+	padding-left: 250px;
+	margin-top: 10px;
+	height: 100px;
+}
+
+#followdetails p {
+	padding: 2px 0px;
+	margin: 2px 0px;
+}
+
+#followdetails a {
+	text-decoration: none;
+	color: rgb(73, 152, 152);
+	margin-top: 5px;
+}
+
+#dishdetails {
+	width: 450px;
+	font-family: 'Questrial', sans-serif;
+	font-size: 18px;
+	margin-top: 50px;
+	padding-left: 20px;
 }
 
 /* FORMS */

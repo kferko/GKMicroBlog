@@ -214,7 +214,7 @@ end
 
 # route to user public profile
 get '/user/:other_id' do
-	erb :public_profile
+	erb :public_profile_ruby
 end
 
 get '/user/:other_id/follow' do

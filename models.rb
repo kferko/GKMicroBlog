@@ -22,18 +22,48 @@ class User < ActiveRecord::Base
 		friends.any?{|friend| friend.id == user_id}
 	end
 
-	def recent_friend_reviews(quantity=5)
+	def recent_friend_reviews(quantity=nil)
 		friend_reviews = self.friends.map { |friend| friend.reviews }
 		friend_reviews.flatten!
-		friend_reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+		if quantity
+			friend_reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+		else
+			friend_reviews.sort_by{ |review| review.id }.reverse
+		end
 	end
 
-	def recent_reviews(quantity=2)
-		self.reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+	def recent_reviews(quantity=nil)
+		if quantity
+			self.reviews.sort_by{ |review| review.id }.reverse[0..quantity-1]
+		else
+			self.reviews.sort_by{ |review| review.id }.reverse
+		end
 	end
 
 	def most_recent_review
 		self.reviews.sort_by{ |review| review.id }.reverse.first
+	end
+
+	def public_name
+		self.firstname.capitalize + " " + self.lastname[0].upcase + "."
+	end
+
+	def public_location
+		self.city.capitalize + ", " + self.state.upcase
+	end
+
+	def highest_review 
+		self.reviews.sort_by{ |review| review.rating }.reverse.first
+	end
+
+	def lowest_review 
+		self.reviews.sort_by{ |review| review.rating }.first
+	end
+
+	def average_rating
+		all_ratings = self.reviews.map{|review| review.rating}
+		average_rating = all_ratings.reduce(0){|sum, rating| sum + rating} / all_ratings.count.to_f
+		'%.1f' % average_rating 
 	end
 end
 
