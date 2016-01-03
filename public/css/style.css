@@ -84,7 +84,7 @@ body{
 #bodywhite_left {
 	background-color: rgb(255, 255, 255);
 	width: 50%;
-	/*height:900px;*/
+	height:900px;
 	z-index: 3;
 	float:left;
 	border-top-right-radius: 36px;
@@ -92,7 +92,7 @@ body{
 #bodywhite_right {
 	background-color: rgb(255, 255, 255);
 	width: 50%;
-	/*height:900px;*/
+	height:900px;
 	z-index: 3;
 	float:right;
 	border-top-left-radius: 36px;
@@ -695,11 +695,11 @@ body{
 	width:100%;
 	/*height:200px;*/
 	/*margin-top: 290px;*/
-	z-index: 9999;
+	/*z-index: 5;*/
 	height: 160px;
 	position: fixed;
-	bottom: 0px;
-	left: 0px;
+/*	bottom: 0px;
+	left: 0px;*/
 }
 .pagepeak_bott {
 	display:flex;
@@ -710,14 +710,21 @@ body{
 	background-color: rgb(200, 225, 231);
 	width:100%;
 	height: 12px;
+	/*z-index: 4;*/
+	/*margin-top: 300px;*/
+	/*position: absolute;*/
 }
 .social{
 	margin-top: 60px;
-	text-align: center;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
 .copyright{
-	/*margin-top: 20px;*/
-	text-align: center;
+	margin-top: 20px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
 .copyright p {
 	color: rgb(255, 219, 148);
