@@ -26,3 +26,13 @@
 	z-index: 3;
 	text-decoration: none;
 }
+
+#signon {
+    display: flex;
+}
+
+
+#signout {
+    display: none;
+}
+
