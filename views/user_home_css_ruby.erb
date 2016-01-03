@@ -2,7 +2,6 @@
 <div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
 <div class="pagebott_fill"></div>
 <div class="bodywhite">
-<%test_user = User.find(1)%>
 	<div id="bodywhite_left">
 		<div class="leftbody">
 			<div class="headerlcb">
@@ -12,47 +11,47 @@
 				<div class="headerlcbw"></div>
 				<div class="reviewsleft">
 					<div id="profilephoto">
-						<img src="/img/avatars/<%=test_user.id%>.png">
-						<h3><%=test_user.username%></h3>
+						<img src="/img/avatars/<%=current_user.id%>.png">
+						<h3><%=current_user.username%></h3>
 					</div>
 
-					<form id="userupdate" method='post' action='/update/user/<%=test_user.id%>'>
+					<form id="userupdate" method='post' action='/update/user/<%=current_user.id%>'>
 						<div id="userbasicinfo">
 							<label for="firstname">First Name:</label>
-							<input type="text" name="firstname" value="<%=test_user.firstname%>">
+							<input type="text" name="firstname" value="<%=current_user.firstname%>">
 							<label for="lastname">Last Name:</label>
-							<input type="text" name="lastname" value="<%=test_user.lastname%>">
+							<input type="text" name="lastname" value="<%=current_user.lastname%>">
 							<label for="email">Email:</label>
-							<input type="email" name="email" value="<%=test_user.email%>">
+							<input type="email" name="email" value="<%=current_user.email%>">
 							<label for="phone">Phone:</label>
-							<input type="text" name="phone" value="<%=test_user.phone%>">
+							<input type="text" name="phone" value="<%=current_user.phone%>">
 							<label for="motto">Motto:</label>
-							<input type="text" name="motto" value="<%=test_user.motto%>" maxlength="50">
+							<input type="text" name="motto" value="<%=current_user.motto%>" maxlength="50">
 						</div>
 						<h4 id="headeraddressinfo">Address</h4>
 						<div id="useraddressinfo">
 							<div>
 								<label for="street">Street:</label>
-								<input type="text" name="street" value="<%=test_user.street%>">
+								<input type="text" name="street" value="<%=current_user.street%>">
 							</div>
 							<div>
 								<label for="city">City:</label>
-								<input type="text" name="city" value="<%=test_user.city%>">
+								<input type="text" name="city" value="<%=current_user.city%>">
 							</div>	
 							<div>	
 								<label for="state">State:</label>
-								<input type="text" name="state" value="<%=test_user.state%>">
+								<input type="text" name="state" value="<%=current_user.state%>">
 							</div>
 							<div>
 								<label for="zip">Zip:</label>
-								<input type="text" name="zip" value="<%=test_user.zip%>">
+								<input type="text" name="zip" value="<%=current_user.zip%>">
 							</div>
 						</div>
 						<input type="submit" value="update profile details">
 					</form>
 
 					<div id="passwordchange">
-						<form method="POST" action="/change-password/user/<%=test_user.id%>">
+						<form method="POST" action="/change-password/user/<%=current_user.id%>">
 							<h4>Change password</h4>
 							<div id="userpasswordfields">
 								<div>
@@ -86,15 +85,15 @@
 					<div id="rsubhead">
 						<div id="rsubhead_left">
 							
-							<h3><%=test_user.friends.count%> following</h3>
+							<h3><%=current_user.friends.count%> following</h3>
 						</div>
 						<div id="rsubhead_right">
-							<h4><%=test_user.followers.count%> followers</h4>
+							<h4><%=current_user.followers.count%> followers</h4>
 						</div>
 					</div>
 					<div class="followers">
 					<!-- for each follower, populate a friend/follower box -->
-					<%test_user.followers.each do |follower|%>
+					<%current_user.followers.each do |follower|%>
 						<%="<a href='/user/#{follower.id}'>"%>
 							<%="<div class='followbox'>"%>
 								<%="<div id='followerid'>"%>
@@ -112,7 +111,7 @@
 					</div>
 					<div class="following">
 					<!-- for each friend, populate a friend/follower box -->
-					<%test_user.friends.each do |friend|%>
+					<%current_user.friends.each do |friend|%>
 						<%="<a href='/user/#{friend.id}'>"%>
 							<%="<div class='followbox'>"%>
 								<%="<div id='followerid'>"%>
@@ -135,7 +134,7 @@
 						<h3>your</h3><h4>dishes</h4>
 					</div>
 					<!-- for each of the users reviews, populate a review card -->
-					<%test_user.recent_reviews(2).each do |review|%>
+					<%current_user.recent_reviews(2).each do |review|%>
 					<%="<div class='dishreview'>"%>
 						<%="<div id='drheader'>"%>
 							<%="<p><a href='/dish/#{review.dish.id}'>#{review.dish.name}</a></p>"%>

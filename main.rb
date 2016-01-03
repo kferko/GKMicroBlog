@@ -85,7 +85,7 @@ end
 post '/sign-in' do
 	if !name_taken?(params[:username])
 		puts "That username doesn't exist!" #TODO: add flash message
-		erb :login
+		erb :home_ruby
 	elsif owner_exists?(params[:username])
 		@user = Owner.where(username: params[:username]).first
 		if valid_password?(@user, params[:password])
@@ -94,17 +94,17 @@ post '/sign-in' do
 			erb :owner_home
 		else
 			puts "That password is not correct." #TODO: add flash message
-			erb :login
+			erb :home_ruby
 		end
 	elsif user_exists?(params[:username])
 		@user = User.where(username: params[:username]).first
 		if valid_password?(@user, params[:password])
 			session[:user_id] = User.where(username: params[:username]).first.id
 			session[:owner] = false
-			erb :user_home
+			erb :user_home_css_ruby
 		else
 			puts "That password is not correct." #TODO: flash message
-			erb :login
+			erb :home_ruby
 		end
 	end
 end
