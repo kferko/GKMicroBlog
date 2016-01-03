@@ -30,6 +30,10 @@ get '/restaurant_home' do
 	erb :restaurant_home
 end
 
+get '/restaurant_home_ruby' do
+	erb :restaurant_home_ruby
+end
+
 get '/modaltest' do
 	erb :modaltest
 end
@@ -154,7 +158,7 @@ post '/change-password/user/:user_id' do
 end
 
 get '/menu/:menu_id' do
-	erb :menu
+	erb :restaurant_home_ruby
 end
 
 # route for adding a Menu
