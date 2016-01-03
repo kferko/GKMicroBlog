@@ -23,9 +23,9 @@ User.create(username: "kevin",
 			state: "PA",
 			zip: "19107")
 
-User.create(username: "foodsnob",
+User.create(username: "foodie",
 			password: "pw",
-			motto: "I love writing mean reviews. This site sucks, btw.",
+			motto: "Food is my life.",
 			firstname: "Debbie",
 			lastname: "Downer",
 			email: "debbie@example.com",
@@ -50,7 +50,7 @@ User.create(username: "jules",
 # add first owner, menu, and two dishes
 Owner.create(username: "han", password: "hnasty")
 Menu.create(name: "Han Dynasty", 
-			description: "Authentic Szechuan Cuisine",
+			description: "Han Dynasty is Philadelphia's home for authentic Szechuan cuisine. Accept no substitutes.",
 			cuisine: "Chinese",
 			street: "3711 Market Street", 
 			city: "Philadelphia",
@@ -86,7 +86,7 @@ Dish.create(name: "Roasted Duck", description: "", price: 12.95, course: 4, menu
 # add second owner, menu, and two dishes
 Owner.create(username: "pat", password: "king")
 Menu.create(name: "Pat's King of Steaks", 
-			description: "The original home of the Philly Cheesesteak",
+			description: "The originator and inventor of the steak and cheesesteak sandwiches, Pat's King of Steaks has been owned and operated by the Olivieri family for over 80 years.",
 			cuisine: "American",
 			street: "1301 East Passyunk Avenue", 
 			city: "Philadelphia",
@@ -158,7 +158,7 @@ Dish.create(name: "Coffee Panna Cotta", description: "", price: 24.00, course: 4
 # add fourth owner, menu, and two dishes
 Owner.create(username: "rich", password: "veggie")
 Menu.create(name: "Vedge", 
-			description: "A vegetable restaurant",
+			description: "Opened in Fall 2011, Vedge is a vegetable restaurant by Chefs Richard Landau & Kate Jacoby. Located in the historic Tiger Building on Locust Street, Vedge offers a classically elegant dining experience with a progressive, bold approach to cooking. The menus at Vedge are putting vegetables in the spotlight, featuring locally sourced and seasonal ingredients. Absolutely no animal products are used in the Vedge Kitchen. Behind the bar, our cocktails are fun and innovative, using house-made syrups and bitters. Our wines and beers are selected to represent the best of the natural and craft movements. Vedge prides itself on being a foodie's restaurant – for omnivores, vegetarians, vegans, and carnivores alike.",
 			cuisine: "Vegetarian",
 			street: "1221 Locust Street", 
 			city: "Philadelphia",
