@@ -50,19 +50,13 @@ get '/public_profile' do
 	erb :public_profile
 end
 
-# get '/' do
-# #  "Welcome to DishDish!"
-# 	session.clear
-# 	erb :login
-# end
-
 post '/create-user' do
 	if name_taken?(params[:username]) 
 		puts "That name has already been taken!" #TODO: Add flash message
-		erb :login
+		erb :home_ruby
 	elsif params[:password] != params[:password_confirmation]
 		puts "Those passwords don't match!" #TODO: Add flash message
-		erb :login
+		erb :home_ruby
 	### TODO: Add validation of username (restrict to alphanumeric, length, etc.)
 	### TODO: Add validation of password (restrict to alphanumeric, length, etc.)
 	else 
@@ -75,10 +69,10 @@ end
 post '/create-owner' do
 	if name_taken?(params[:username]) 
 		puts "That name has already been taken!" #TODO: Add flash message
-		erb :login
+		erb :home_ruby
 	elsif params[:password] != params[:password_confirmation]
 		puts "Those passwords don't match!" #TODO: Add flash message
-		erb :login
+		erb :home_ruby
 	### TODO: Add validation of username (restrict to alphanumeric, length, etc.)
 	### TODO: Add validation of password (restrict to alphanumeric, length, etc.)
 	else 
@@ -122,7 +116,7 @@ get '/profile' do
 	if session[:owner]
 		erb :owner_home
 	else 
-		erb :user_home
+		erb :user_home_css_ruby
 	end
 end
 
