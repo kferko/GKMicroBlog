@@ -137,6 +137,7 @@ input[type=nusubmit] {
 	width: 300px;
 	height: 350px;
    	margin: auto;
+   	z-index: 40;
 } 
 .lightbox {
    /** Hide the lightbox */

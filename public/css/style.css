@@ -656,7 +656,7 @@ body{
 }
 
 
-.button {
+.button1, .button2 {
 	color: rgb(73, 152, 152);
 	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;

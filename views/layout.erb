@@ -9,12 +9,13 @@
 	<script type="text/javascript" src="/js/menu.js"></script>
 	<script type="text/javascript" src="/js/modal.js"></script>
 	<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!-- // <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="/css/modal.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/css/userpage.css">
 	<link rel="stylesheet" type="text/css" href="/css/ownerpage.css">
 	<link rel="stylesheet" type="text/css" href="/css/signin.css">
+	<link rel="stylesheet" type="text/css" href="/css/menuing.css">
 	<link rel="stylesheet" type="text/css" href="/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="/css/newownermodal.css">
 	<link rel="stylesheet" type="text/css" href="/css/newusermodal.css">
@@ -22,6 +23,9 @@
 </head>
 <body>
 	<div class="container">
+	<div class="menuing">
+		<div class="topmenu"><a href="#menuing" class="menubutton"><input type='image' img src="/img/menuicon.png"></a></div>
+	</div>
 	<div class="signin">
 		<div class="topsignin"><input type='image' id='clicksi' img src="/img/signin.png"></div>
 	      	<div class="signinform">
@@ -118,6 +122,31 @@
 		</div>
 	</div>
 </div>
+
+
+<div class="menulightbox" id="menuing">
+  	<div class="menubox">
+  		<div class="menuhighlight">
+			<div class="menulook"></div>
+		</div>
+		<div class="menufield">
+			<a href='/restaurant_home'><p>Restaurant</p></a>
+		</div>
+		<div class="menufield">
+			<p>Link 2</p>
+		</div>
+		<div class="menufield">
+			<p>Link 3</p>
+		</div>
+		<div class="menucloseaddbar">
+			<a href="#" class="close"><div class="menucloseicon"></div></a>
+		</div>
+	</div>
+</div>
+
+
+
+
 
 </body>
 </html>
