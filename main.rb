@@ -18,6 +18,10 @@ get '/user_home_css' do
 	erb :user_home_css
 end
 
+get '/user_home_css_ruby' do
+	erb :user_home_css_ruby
+end
+
 get '/owner_home_css' do
 	erb :owner_home_css
 end
@@ -81,7 +85,7 @@ end
 post '/sign-in' do
 	if !name_taken?(params[:username])
 		puts "That username doesn't exist!" #TODO: add flash message
-		erb :login
+		erb :home_ruby
 	elsif owner_exists?(params[:username])
 		@user = Owner.where(username: params[:username]).first
 		if valid_password?(@user, params[:password])
@@ -90,17 +94,17 @@ post '/sign-in' do
 			erb :owner_home
 		else
 			puts "That password is not correct." #TODO: add flash message
-			erb :login
+			erb :home_ruby
 		end
 	elsif user_exists?(params[:username])
 		@user = User.where(username: params[:username]).first
 		if valid_password?(@user, params[:password])
 			session[:user_id] = User.where(username: params[:username]).first.id
 			session[:owner] = false
-			erb :user_home
+			erb :user_home_css_ruby
 		else
 			puts "That password is not correct." #TODO: flash message
-			erb :login
+			erb :home_ruby
 		end
 	end
 end
@@ -127,8 +131,18 @@ end
 
 # route for updating a User profile detail 
 post '/update/user/:user_id' do
-	User.find(params[:user_id]).update_attributes(params.keys.first => params[params.keys.first])
-	erb :update_user
+	User.find(params[:user_id]).update_attributes(
+		firstname: params[:firstname],
+		lastname: params[:lastname],
+		motto: params[:motto],
+		email: params[:email],
+		phone: params[:phone],
+		street: params[:street],
+		city: params[:city],
+		state: params[:state],
+		zip: params[:zip])
+
+	redirect '/user_home_css_ruby'
 end
 
 # route for updating a User password

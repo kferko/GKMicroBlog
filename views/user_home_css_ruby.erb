@@ -1,0 +1,190 @@
+<div class="pagepeak_top"><img src="/img/menupeak.png"></div>
+<div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
+<div class="pagebott_fill"></div>
+<div class="bodywhite">
+	<div id="bodywhite_left">
+		<div class="leftbody">
+			<div class="headerlcb">
+				<div id="lhead">
+					<h1>your</h1><p>-</p><h2>profile</h2><h3>!</h3>
+				</div>
+				<div class="headerlcbw"></div>
+				<div class="reviewsleft">
+					<div id="profilephoto">
+						<img src="/img/avatars/<%=current_user.id%>.png">
+						<h3><%=current_user.username%></h3>
+					</div>
+
+					<form id="userupdate" method='post' action='/update/user/<%=current_user.id%>'>
+						<div id="userbasicinfo">
+							<label for="firstname">First Name:</label>
+							<input type="text" name="firstname" value="<%=current_user.firstname%>">
+							<label for="lastname">Last Name:</label>
+							<input type="text" name="lastname" value="<%=current_user.lastname%>">
+							<label for="email">Email:</label>
+							<input type="email" name="email" value="<%=current_user.email%>">
+							<label for="phone">Phone:</label>
+							<input type="text" name="phone" value="<%=current_user.phone%>">
+							<label for="motto">Motto:</label>
+							<input type="text" name="motto" value="<%=current_user.motto%>" maxlength="50">
+						</div>
+						<h4 id="headeraddressinfo">Address</h4>
+						<div id="useraddressinfo">
+							<div>
+								<label for="street">Street:</label>
+								<input type="text" name="street" value="<%=current_user.street%>">
+							</div>
+							<div>
+								<label for="city">City:</label>
+								<input type="text" name="city" value="<%=current_user.city%>">
+							</div>	
+							<div>	
+								<label for="state">State:</label>
+								<input type="text" name="state" value="<%=current_user.state%>">
+							</div>
+							<div>
+								<label for="zip">Zip:</label>
+								<input type="text" name="zip" value="<%=current_user.zip%>">
+							</div>
+						</div>
+						<input type="submit" value="update profile details">
+					</form>
+
+					<div id="passwordchange">
+						<form method="POST" action="/change-password/user/<%=current_user.id%>">
+							<h4>Change password</h4>
+							<div id="userpasswordfields">
+								<div>
+									<label for="old_password">Old password:</label>
+									<input class="passwordinput" type="password" name="old_password" required>
+								</div>
+								<div>
+									<label for="new_password">New password:</label>
+									<input class="passwordinput" type="password" name="new_password" required>
+								</div>
+								<div>
+									<label for="new_password_confirmation">Confirm password:</label>
+									<input class="passwordinput" type="password" name="new_password_confirmation" required>
+								</div>
+							</div>
+							<input id="passwordsubmit" type="submit" value="change password">
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="bodywhite_right">
+		<div class="rightbody">
+			<div class="headerrcb">
+				<div id="rhead">
+					<h1>latest</h1><p>-</p><h2>servings</h2><h3>...</h3>
+				</div>
+				<div class="headerrcbw"></div>
+				<div class="reviewsright">
+					<div id="rsubhead">
+						<div id="rsubhead_left">
+							
+							<h3><%=current_user.friends.count%> following</h3>
+						</div>
+						<div id="rsubhead_right">
+							<h4><%=current_user.followers.count%> followers</h4>
+						</div>
+					</div>
+					<div class="followers">
+					<!-- for each follower, populate a friend/follower box -->
+					<%current_user.followers.each do |follower|%>
+						<%="<a href='/user/#{follower.id}'>"%>
+							<%="<div class='followbox'>"%>
+								<%="<div id='followerid'>"%>
+									<%="<div id='followerphoto'>"%>
+										<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{follower.id}.png'></p>"%>
+									<%="</div>"%>
+									<%="<div id='followername'>"%>
+										<%="<p>#{follower.username}</p>"%>
+									<%="</div>"%>
+								<%="</div>"%>
+							<%="</div>"%>
+						<%="</a>"%>					
+						<!-- end follower boxes -->
+					<%end%>
+					</div>
+					<div class="following">
+					<!-- for each friend, populate a friend/follower box -->
+					<%current_user.friends.each do |friend|%>
+						<%="<a href='/user/#{friend.id}'>"%>
+							<%="<div class='followbox'>"%>
+								<%="<div id='followerid'>"%>
+									<%="<div id='followerphoto'>"%>
+										<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{friend.id}.png'></p>"%>
+									<%="</div>"%>
+									<%="<div id='followername'>"%>
+										<%="<p>#{friend.username}</p>"%>
+									<%="</div>"%>
+								<%="</div>"%>
+							<%="</div>"%>
+						<%="</a>"%>
+						<!-- end friend boxes -->
+					<%end%>
+					</div>
+				</div>
+				<div class="horizbarcont"><div id="horizbar"></div></div>
+				<div class="reviewsright">
+					<div id="rsubhead">
+						<h3>your</h3><h4>dishes</h4>
+					</div>
+					<!-- for each of the users reviews, populate a review card -->
+					<%current_user.recent_reviews(2).each do |review|%>
+					<%="<div class='dishreview'>"%>
+						<%="<div id='drheader'>"%>
+							<%="<p><a href='/dish/#{review.dish.id}'>#{review.dish.name}</a></p>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevbox'>"%>
+							<%="<div id='reviewerid'>"%>
+								<%="<div id='dreviewerphoto'>"%>
+									<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{review.user.id}.png'></p>"%>
+								<%="</div>"%>
+								<%="<div id='dreviewername'>"%>
+									<%="<p>#{review.user.username}</p>"%>
+								<%="</div>"%>
+								<%="<div id='dreviewerdishes'>"%>
+									<%="<p>#{review.user.reviews.count}</p>"%>
+									<!-- TODO: there should be a line break here!!!! -->
+									<%="<p>&nbsp;dishes</p>"%>
+								<%="</div>"%>
+							<%="</div>"%>
+							<%="<div class='dishrevdishtxt'>"%>
+								<%="<p>#{review.description}</p>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevdishrate'>"%>
+							<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
+							<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p>"%>
+						<%="</div>"%>
+						<%="<div class='dishreviconbar'>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+							<%="</div>"%>
+							<%="<div id='restrevicon'>"%>
+							<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+							<%="</div>"%>
+						<%="</div>"%>
+						<%="<div class='dishrevrestname'>"%>
+							<%="<p><a href='/menu/#{review.menu_id}'>#{review.menu.name}</a></p>"%>
+						<%="</div>"%>
+					<%="</div>"%>
+					<!-- end review card -->
+					<%end%>
+				</div>
+		</div>
+	</div>
+</div>

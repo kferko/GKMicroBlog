@@ -744,3 +744,98 @@ body{
 	text-align: center;
 }
 
+/* FORMS */
+
+#profilephoto {
+	float: left;
+	text-align: center;
+	width: 180px;
+	height: 200px;
+	margin-top: 10px;
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+}
+
+#profilephoto img {
+	width: 100px;
+	height: 140px;
+}
+
+#userupdate {
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+}
+
+#userbasicinfo {
+	float: right;
+	width: 250px;
+	margin-bottom: 30px;
+}
+
+#userbasicinfo label {
+	display: block;
+	padding: 2px 0px;
+}
+
+#userbasicinfo input {
+	display: block;
+	padding: 2px 0px;
+	width: 246px;
+}
+
+#headeraddressinfo {
+	clear: both;
+}
+
+#useraddressinfo {
+	margin-bottom: 20px;	
+	height: 110px;
+}
+
+#useraddressinfo label {
+	display: inline-block;
+	float: left;
+	clear: both;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+#useraddressinfo input {
+	display: inline-block;
+	width: 360px;
+	float: right;
+	padding-right: 50px;
+	padding-bottom: 5px;
+}
+
+#passwordchange {
+	font-family: 'Questrial', sans-serif;
+	font-size: 16px;
+	margin-top: 40px;
+}
+
+#userpasswordfields {
+	margin-top: 20px;
+	height: 90px;
+}
+
+#passwordchange label {
+	display: inline-block;
+	float: left;
+	clear: both;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+input.passwordinput {
+	display: inline-block;
+	width: 200px;
+	float: right;
+	padding-right: 100px;
+	padding-bottom: 5px;
+}
+
+#passwordsubmit {
+	clear: both;
+	width: 130px;
+}
