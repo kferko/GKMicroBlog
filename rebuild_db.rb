@@ -1,3 +1,12 @@
+`rm dddb.sqlite3`
+puts "deleted database"
+`rm db/schema.rb`
+puts "deleted schema"
+puts "rebuilding database..."
+`rake db:migrate`
+
+puts "populating database...`"
+load 'main.rb'
 # add four users
 User.create(username: "greg", 
 			password: "pw", 
@@ -218,3 +227,5 @@ UserFriendship.create(user_id: 4, user_friend_id: 1)
 UserFriendship.create(user_id: 4, user_friend_id: 2)
 UserFriendship.create(user_id: 4, user_friend_id: 3)
 UserFriendship.create(user_id: 3, user_friend_id: 2)
+
+puts "Success!"
