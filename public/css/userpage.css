@@ -426,6 +426,12 @@ body{
 	letter-spacing: .5px;
 	margin: 0;
 }
+
+#drheader a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}
+
 #flag {
 	position: relative;
 	left: 65px;
@@ -537,6 +543,10 @@ body{
 	margin: 0px 5px 10px 5px;
 	display:flex;
 }
+.dishrevbox a{
+	text-decoration: none;
+}
+
 #dreviewerid {
 	background-color: rgb(73, 152, 152);
 	width: 50px;
@@ -670,8 +680,10 @@ body{
 	font-size: 18px;
 	margin: 0;
 }
-
-
+.dishrevrestname a {
+	text-decoration: none;
+	color: rgb(240, 92, 34);
+}
 
 
 .horizbarcont {
