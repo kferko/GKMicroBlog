@@ -142,57 +142,112 @@
 					</div>
 					<!-- for each of the recent friend reviews, populate a review card -->
 					<div class="friendsrev">
-					<%current_user.recent_friend_reviews(4).each do |review|%>
-					<%="<div class='dishreview'>"%>
-						<%="<div id='drheader'>"%>
-							<%="<p><a href='/menu/#{review.menu_id}'>#{review.dish.name}</a></p>"%>
-						<%="</div>"%>
-						<%="<div class='dishrevbox'>"%>
-							<%="<a href='/user/#{review.user_id}'>"%>
-								<%="<div id='reviewerid'>"%>
-									<%="<div id='dreviewerphoto'>"%>
-										<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{review.user.id}.png'></p>"%>
+					<%if !current_user.recent_friend_reviews.empty?%>
+						<%current_user.recent_friend_reviews(10).each do |review|%>
+						<%="<div class='dishreview'>"%>
+							<%="<div id='drheader'>"%>
+								<%="<p><a href='/menu/#{review.menu_id}'>#{review.dish.name}</a></p>"%>
+							<%="</div>"%>
+							<%="<div class='dishrevbox'>"%>
+								<%="<a href='/user/#{review.user_id}'>"%>
+									<%="<div id='reviewerid'>"%>
+										<%="<div id='dreviewerphoto'>"%>
+											<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{review.user.id}.png'></p>"%>
+										<%="</div>"%>
+										<%="<div id='dreviewername'>"%>
+											<%="<p>#{review.user.username}</p>"%>
+										<%="</div>"%>
+										<%="<div id='dreviewerdishes'>"%>
+											<%="<p>#{review.user.reviews.count}</p>"%>
+											<!-- TODO: there should be a line break here!!!! -->
+											<%="<p>&nbsp;dishes</p>"%>
+										<%="</div>"%>
 									<%="</div>"%>
-									<%="<div id='dreviewername'>"%>
-										<%="<p>#{review.user.username}</p>"%>
-									<%="</div>"%>
-									<%="<div id='dreviewerdishes'>"%>
-										<%="<p>#{review.user.reviews.count}</p>"%>
-										<!-- TODO: there should be a line break here!!!! -->
-										<%="<p>&nbsp;dishes</p>"%>
-									<%="</div>"%>
+								<%="</a>"%>
+								<%="<div class='dishrevdishtxt'>"%>
+									<%="<p>#{review.description}</p>"%>
 								<%="</div>"%>
-							<%="</a>"%>
-							<%="<div class='dishrevdishtxt'>"%>
-								<%="<p>#{review.description}</p>"%>
+							<%="</div>"%>
+							<%="<div class='dishrevdishrate'>"%>
+								<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
+								<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p>"%>
+							<%="</div>"%>
+							<%="<div class='dishreviconbar'>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+								<%="</div>"%>
+							<%="</div>"%>
+							<%="<div class='dishrevrestname'>"%>
+								<%="<p><a href='/menu/#{review.menu_id}'>#{review.menu.name}</a></p>"%>
 							<%="</div>"%>
 						<%="</div>"%>
-						<%="<div class='dishrevdishrate'>"%>
-							<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
-							<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p>"%>
-						<%="</div>"%>
-						<%="<div class='dishreviconbar'>"%>
-							<%="<div id='restrevicon'>"%>
-							<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object>"%>
+						<%end%>
+						<!-- end review card -->
+					<%else%>
+					<!-- if user has no friends (or no friends have written reviews), just show any recent reviews -->
+						<%Review.most_recent(10).each do |review|%>
+						<%="<div class='dishreview'>"%>
+							<%="<div id='drheader'>"%>
+								<%="<p><a href='/menu/#{review.menu_id}'>#{review.dish.name}</a></p>"%>
 							<%="</div>"%>
-							<%="<div id='restrevicon'>"%>
-							<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+							<%="<div class='dishrevbox'>"%>
+								<%="<a href='/user/#{review.user_id}'>"%>
+									<%="<div id='reviewerid'>"%>
+										<%="<div id='dreviewerphoto'>"%>
+											<%="<p><img style='width: 50px; height: 70px' src='/img/avatars/#{review.user.id}.png'></p>"%>
+										<%="</div>"%>
+										<%="<div id='dreviewername'>"%>
+											<%="<p>#{review.user.username}</p>"%>
+										<%="</div>"%>
+										<%="<div id='dreviewerdishes'>"%>
+											<%="<p>#{review.user.reviews.count}</p>"%>
+											<!-- TODO: there should be a line break here!!!! -->
+											<%="<p>&nbsp;dishes</p>"%>
+										<%="</div>"%>
+									<%="</div>"%>
+								<%="</a>"%>
+								<%="<div class='dishrevdishtxt'>"%>
+									<%="<p>#{review.description}</p>"%>
+								<%="</div>"%>
 							<%="</div>"%>
-							<%="<div id='restrevicon'>"%>
-							<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+							<%="<div class='dishrevdishrate'>"%>
+								<%="<object type='image/svg+xml' data='/img/cam.svg'></object>"%>
+								<%="<object type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{review.rating}</p>"%>
 							<%="</div>"%>
-							<%="<div id='restrevicon'>"%>
-							<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+							<%="<div class='dishreviconbar'>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/restaurant.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/map.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/heart.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/alcohol.svg'></object>"%>
+								<%="</div>"%>
+								<%="<div id='restrevicon'>"%>
+								<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+								<%="</div>"%>
 							<%="</div>"%>
-							<%="<div id='restrevicon'>"%>
-							<%="<object type='image/svg+xml' data='/img/dollarsfour.svg'></object>"%>
+							<%="<div class='dishrevrestname'>"%>
+								<%="<p><a href='/menu/#{review.menu_id}'>#{review.menu.name}</a></p>"%>
 							<%="</div>"%>
-						<%="</div>"%>
-						<%="<div class='dishrevrestname'>"%>
-							<%="<p><a href='/menu/#{review.menu_id}'>#{review.menu.name}</a></p>"%>
-						<%="</div>"%>
-					<%="</div>"%>
-					<!-- end review card -->
+						<%="</div>"%>	
+						<%end%>
 					<%end%>
 					</div>
 				</div>
