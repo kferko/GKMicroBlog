@@ -7,7 +7,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 	<script type="text/javascript" src="/js/menu.js"></script>
-	<script type="text/javascript" src="/js/modal.js"></script>
 	<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/modal.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -31,9 +30,12 @@
 		<div class="topsignin">
 			<div id="signon"><input type='image' id='clicksi' img src="/img/signin.png"></div>
 			<div id="signout"><input type='image' id='clickso' img src="/img/signout.png"></div>
+			<div id="hello">
+				<p>Hello "<%=current_user.firstname%>"! Let's Dish!</p>
+			</div>
 		</div>
 	      	<div class="signinform">
-	    		<form method="POST" action="/sign-in">
+	    		<form method="POST" action="/sign-in" onsubmit="showHide()">
 					<input type="text" name="username" placeholder="username" required>
 					<input type="password" name="password" placeholder="password" required>
 					<input type="submit" value="sign in!">

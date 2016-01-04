@@ -646,7 +646,7 @@
 /*	display:flex;
 	justify-content:center;
 	align-items:center;*/
-	overflow:scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
 }
 .followbox{
@@ -757,15 +757,10 @@
 }
 .friendsrev {
 	width: 500px;
-	height: 320px;
+	height: 350px;
 	float:right;
-	/*position: relative;*/
-	margin: 10px;
-
-/*	display:flex;
-	justify-content:center;
-	align-items:center;*/
-	overflow:scroll;
+	/*margin: 10px;*/
+	overflow-y: auto;
 	overflow-x: hidden;
 }
 

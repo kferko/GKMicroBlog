@@ -42,6 +42,16 @@ $(function() {
   });
 });
 
+ function showHide() {
+   var div = document.getElementById(hello);
+   if (div.style.display == 'none') {
+     div.style.display = '';
+   }
+   else {
+     div.style.display = 'none';
+   }
+ }
+
 
 $(".menubutton").click(function(){
         $(".menulightbox").fadeIn(1000)

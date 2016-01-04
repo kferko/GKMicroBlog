@@ -11,42 +11,37 @@ require './models'
 set :sessions, :true
 
 get '/' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :home_ruby
 end
 
 get '/user_home_css' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :user_home_css
 end
 
 get '/user_home_css_ruby' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :user_home_css_ruby
 end
 
 get '/owner_home_css' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :owner_home_css
 end
 
 get '/restaurant_home' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :restaurant_home
 end
 
 get '/restaurant_home_ruby' do
+	@title = "dishdish  .  a greg and kevin production"
 	erb :restaurant_home_ruby
 end
 
-get '/modaltest' do
-	erb :modaltest
-end
-
-get '/modal_reviewentry' do
-	erb :modal_reviewentry
-end
-
-get '/modal_usernew' do
-	erb :modal_usernew
-end
-
 get '/public_profile' do
+	@title = "dishdish  .  jealous? become a disher today!"
 	erb :public_profile
 end
 

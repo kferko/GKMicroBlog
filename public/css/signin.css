@@ -26,13 +26,17 @@
 	z-index: 3;
 	text-decoration: none;
 }
-
 #signon {
     display: flex;
 }
-
-
 #signout {
     display: none;
 }
 
+#hello {
+	display: none;
+	color: rgb(255, 219, 148);
+	font-family: 'Quicksand', sans-serif;
+	font-size: 14px;
+	letter-spacing: -8px;
+}
