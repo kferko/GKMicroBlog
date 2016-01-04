@@ -38,7 +38,7 @@
 						    <div class="pane">
 						    <!-- for each dish on the menu where course = 1, populate a dishselect div -->
 						    <%current_menu.dishes.where(course: 1).each do |dish|%>
-						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-user-id='#{current_user.id}'>"%>
+						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-dish-name='#{dish.name}' data-user-id='#{current_user.id}' data-user-name='#{current_user.username}' >"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
@@ -54,7 +54,7 @@
 					    <h3><%=current_menu.course2.downcase%></h3>
 						    <div class="pane">
 					        <%current_menu.dishes.where(course: 2).each do |dish|%>
-						        <%="<div class='dishselect'>"%>
+						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-dish-name='#{dish.name}' data-user-id='#{current_user.id}' data-user-name='#{current_user.username}'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
@@ -67,7 +67,7 @@
 						<h3><%=current_menu.course3.downcase%></h3>
 						    <div class="pane">
 						    <%current_menu.dishes.where(course: 3).each do |dish|%>
-						        <%="<div class='dishselect'>"%>
+						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-dish-name='#{dish.name}' data-user-id='#{current_user.id}' data-user-name='#{current_user.username}'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
@@ -80,7 +80,7 @@
 						<h4><%=current_menu.course4.downcase%></h4>
 						    <div class="pane">
 						    <%current_menu.dishes.where(course: 4).each do |dish|%> 
-						        <%="<div class='dishselect'>"%>
+						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-dish-name='#{dish.name}' data-user-id='#{current_user.id}' data-user-name='#{current_user.username}'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>

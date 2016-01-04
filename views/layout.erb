@@ -97,31 +97,23 @@
 	</div>
 </div>
 <div class="lightbox" id="newreview">
-<%test_dish = Dish.first%>
-<%test_user = User.first%>
   	<div class="box">
 		<div class="writereview">
 			<div id="wrheader">
-				<%=test_dish.name%>	
 			</div>
 			<div class="wrbox">
 				<div id="wrid">
 					<div id="wrphoto">
-					<img style='width: 50px; height: 70px' src='/img/avatars/<%=test_user.id%>.png'>
+					<img style='width: 50px; height: 70px'>
 					</div>
 					<div id="wrname">
-					<%=test_user.username%>
 					</div>
 				</div>
 				<div class="wrtxt">
-					<form method="post" action="/item/<%=test_dish.id%>/review" id="newreviewform">
-						<p>So tell us what you thought and...</p>
-						<textarea id="reviewfield" name="description" maxlength="140" placeholder="Dish it out!" form="newreviewform" rows="6" cols="28" required></textarea>
-						<p>don't forget to rate your dish...</p>
-						<input type="number" name="rating" rows="3" min="1", max="5", step="1" required>
-						<br>
-						<br>
-						<input type="submit" value="send in your dish!">
+					<form method="post" action="#" id="newreviewform">
+						<textarea name="description" maxlength="140" placeholder="Dish it out!" form="newreviewform" rows="5" cols="20" required></textarea>
+						<input type="number" name="rating" min="1", max="5", step="1" required>
+						<input type="submit" value="dish!">
 					</form>
 				</div>
 			</div>
