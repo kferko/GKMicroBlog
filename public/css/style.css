@@ -1,53 +1,3 @@
-/* ----- COLORS ----- */
-
-/*light tan - rgb(255, 248, 232)
-deeper tan - rgb(255, 219, 148)
-
-light orange - rgb(240, 92, 34)
-orange - rgb(192, 62, 26)
-dark orange/purple - rgb(121, 54, 81)
-
-lightest blue - rgb(201, 226, 231)
-light blue - rgb(131, 200, 191)
-blue - rgb(73, 152, 152)
-dark blue - rgb(81, 96, 113)
-
-body font orange - rgb(121, 54, 81)
-body font blue - rgb(81, 96, 113)   */
-
-
-
-/* ----- BACKGROUND ----- */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-body{
-	background-color: rgb(255, 248, 232);
-    margin:0px 0px;
-  	min-height: 100vh;
-}
-*:focus {
-    outline: none;
-}
-.container { 
-	display: flex;
-  	z-index: 1;
-}
-
-
-/* ----- SIGNIN TOP RIGHT ----- */
-/*.topsignin {
-	display: flex;
-	width: 98%;
-	height:30px;
-	margin-top: 10px;
-	z-index: 2;
-	justify-content:flex-end;
-	position: absolute;
-}*/
-
-
 /* ----- LOGO ----- */
 .logo {
 	display:flex;
@@ -348,6 +298,12 @@ body{
 .reviewsright {
 	width: 480px;
 	margin-left: 20px;
+}
+.restreviewsright {
+	width: 500px;
+	height: 760px;
+	margin-left: 20px;
+	overflow: auto;
 }
 
 .restreview {
@@ -678,6 +634,14 @@ body{
 	text-decoration: none;
 }
 
+/*.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}*/
 
 /*.footer {
 	clear: both;
@@ -687,44 +651,33 @@ body{
    	left: 0px;
    	width: 100%;
    	padding: 0px;
-  	margin: 0px 0px 0px 0px;
    	height: 40px;
 }*/
 
-.footer {
+/*.footer {
 	width:100%;
-	/*height:200px;*/
-	/*margin-top: 290px;*/
-	/*z-index: 5;*/
+	height:200px;
+	margin-top: 290px;
 	height: 160px;
 	position: fixed;
-/*	bottom: 0px;
-	left: 0px;*/
-}
+	z-index: 9999;
+	bottom: 0px;
+	left: 0px;
+}*/
 .pagepeak_bott {
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	text-align: center;
 }
 .pagebott_fill {
 	background-color: rgb(200, 225, 231);
 	width:100%;
 	height: 12px;
-	/*z-index: 4;*/
-	/*margin-top: 300px;*/
-	/*position: absolute;*/
 }
 .social{
 	margin-top: 60px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	text-align: center;
 }
 .copyright{
-	margin-top: 20px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
+	text-align: center;
 }
 .copyright p {
 	color: rgb(255, 219, 148);
