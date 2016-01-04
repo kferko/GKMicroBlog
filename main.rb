@@ -191,12 +191,13 @@ get '/item/:dish_id/review' do
 end
 
 post '/item/:dish_id/review' do
+    menu_id = Dish.find(params[:dish_id]).menu_id
 	if Review.where(dish_id: params[:dish_id], user_id: current_user.id).empty? 
-		Review.create(dish_id: params[:dish_id], user_id: current_user.id, rating: params[:rating], description: params[:description])
+		Review.create(dish_id: params[:dish_id], user_id: current_user.id, rating: params[:rating], description: params[:description], menu_id: menu_id)
     else
-    	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(rating: params[:rating], description: params[:description])		
+    	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(rating: params[:rating], description: params[:description], menu_id: menu_id)		
     end
-	erb :item_review
+    redirect to "/menu/#{menu_id}"
 end
 
 post '/item/:dish_id/review/delete' do

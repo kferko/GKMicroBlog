@@ -38,13 +38,15 @@
 						    <div class="pane">
 						    <!-- for each dish on the menu where course = 1, populate a dishselect div -->
 						    <%current_menu.dishes.where(course: 1).each do |dish|%>
-						        <%="<div class='dishselect'>"%>
+						        <%="<div class='dishselect' data-dish-id='#{dish.id}' data-user-id='#{current_user.id}'>"%>
 						        	<%="<h1>#{dish.name}</h1>"%>
 						        	<%="<p>#{dish.reviews.count}&nbsp;dishes</p>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
 						        	<%="<object id='dishview' type='image/svg+xml' data='/img/view.svg'></object>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/cam.svg'></object><p>174</p>"%>
-						        	<%="<object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object>"%>
+						        	<%="<a class='svglink addrev' href='#newreview'>"%>
+						        		<%="<object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object>"%>
+						        	<%="</a>"%>
 						        <%="</div>"%>
 					        <!-- end dishselect div -->
 					        <%end%>
@@ -58,7 +60,7 @@
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
 						        	<%="<object id='dishview' type='image/svg+xml' data='/img/view.svg'></object>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/cam.svg'></object><p>174</p>"%>
-						        	<%="<object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object>"%>
+						        	<%="<a class='svglink addrev' href='#newreview'><object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object></a>"%>
 						        <%="</div>"%>
 	   				        <%end%> 
 						    </div>
@@ -71,7 +73,7 @@
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
 						        	<%="<object id='dishview' type='image/svg+xml' data='/img/view.svg'></object>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/cam.svg'></object><p>174</p>"%>
-						        	<%="<object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object>"%>
+						        	<%="<a class='svglink addrev' href='#newreview'><object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object></a>"%>
 						        <%="</div>"%>
 					        <%end%>
 						    </div>
@@ -84,7 +86,7 @@
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/platesfour.svg'></object><p>#{dish.average_rating}</p>"%>
 						        	<%="<object id='dishview' type='image/svg+xml' data='/img/view.svg'></object>"%>
 						        	<%="<object id='dishrate' type='image/svg+xml' data='/img/cam.svg'></object><p>174</p>"%>
-						        	<%="<object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object>"%>
+						        	<%="<a class='svglink addrev' href='#newreview'><object id='dishsay' type='image/svg+xml' data='/img/add.svg'></object></a>"%>
 						        <%="</div>"%>
 					        <%end%>
 						    </div>
@@ -112,7 +114,7 @@
 					<%current_menu.recent_reviews.each do |review|%>
 					<%="<div class='dishreview'>"%>
 						<%="<div id='drheader'>"%>
-							<%="<p><a href='/dish/#{review.dish.id}'>#{review.dish.name}</a></p>"%>
+							<%="<p><a href='/menu/#{review.menu_id}'>#{review.dish.name}</a></p>"%>
 						<%="</div>"%>
 						<%="<div class='dishrevbox'>"%>
 							<%="<a href='/user/#{review.user_id}'>"%>
