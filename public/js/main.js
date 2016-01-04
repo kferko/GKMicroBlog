@@ -6,13 +6,13 @@ $(function() {
     if (y == 0) {
       $(".signinform").animate({"right": '+=400px'}, 'slow');
     	y = 1;
-      $("#signon").hide();
-      $("#signout").show();
+      // $("#signon").hide();
+      // $("#signout").show();
     } else {
       $(".signinform").animate({"right": '-=400px'}, 'slow');
       y = 0;
-      $("#signon").show();
-      $("#signout").hide();
+      // $("#signon").show();
+      // $("#signout").hide();
     }
   });
 });
@@ -22,24 +22,24 @@ $(function() {
 // and then I can or you, add some code to kill the session.
 
 // This will show the proper icon at top on subsequent pages
-// if(isset($_SESSION['logged_in'])){
-// $("#signon")
-// }else{
+// if(current_user){
 // $("#signout")
+// }else{
+// $("#signon")
 // }
 // adding some code in here for click will kill the session
-var y = 0;
-$(function() {
-  $("#clickso").click(function() {
-    // $.post("serverpage.php",function(data){
-    //     // if you want you can show some message to user here
-    //   });
-      $(".signinform").animate({"right": '-=400px'}, 'slow');
-      y = 0;
-      $("#signon").show();
-      $("#signout").hide();
-  });
-});
+// var y = 0;
+// $(function() {
+//   $("#clickso").click(function() {
+//     // $.post("serverpage.php",function(data){
+//     //     // if you want you can show some message to user here
+//     //   });
+//       $(".signinform").animate({"right": '-=400px'}, 'slow');
+//       y = 0;
+//       $("#signon").show();
+//       $("#signout").hide();
+//   });
+// });
 
  function showHide() {
    var div = document.getElementById(hello);
