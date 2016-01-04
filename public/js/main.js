@@ -81,4 +81,9 @@ $("#wrcloseicon").click(function(){
         $(".modalbkg").fadeOut(1000)
     });
 
+$(".addrev").click(function(){
+    console.log($(this).closest('.dishselect'));
+  });
+
 });
+
