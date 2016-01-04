@@ -106,6 +106,11 @@ post '/sign-in' do
 	end
 end
 
+get '/sign-out' do
+	session.clear
+	redirect '/'
+end
+
 # to current user profile
 get '/profile' do
 	if session[:owner]
