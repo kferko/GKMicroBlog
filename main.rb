@@ -57,7 +57,7 @@ post '/create-user' do
 	else 
 		User.create(username: params[:username], password: params[:password])
 		session[:user_id] = User.where(username: params[:username]).first.id
-		erb :user_home
+		erb :user_home_css_ruby
 	end
 end
 
