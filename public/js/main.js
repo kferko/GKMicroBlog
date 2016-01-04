@@ -44,24 +44,24 @@ $(function() {
 
 
 $(".menubutton").click(function(){
-        $(".menulightbox").fadeIn(2000)
+        $(".menulightbox").fadeIn(1000)
     });
 
 $(".menucloseicon").click(function(){
-        $(".menulightbox").fadeOut(2000)
+        $(".menulightbox").fadeOut(1000)
     });
 
 $(".button2").click(function(){
-        $("#newowner").fadeIn(2000)
+        $("#newowner").fadeIn(1000)
     });
 $(".button1").click(function(){
-        $("#newuser").fadeIn(2000)
+        $("#newuser").fadeIn(1000)
     });
 $("#nucloseicon").click(function(){
-        $(".lightbox").fadeOut(2000)
+        $(".lightbox").fadeOut(1000)
     });
 $("#nocloseicon").click(function(){
-        $(".lightbox").fadeOut(2000)
+        $(".lightbox").fadeOut(1000)
     });
 
 });
