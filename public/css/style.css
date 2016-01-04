@@ -299,6 +299,12 @@
 	width: 480px;
 	margin-left: 20px;
 }
+.restreviewsright {
+	width: 500px;
+	height: 760px;
+	margin-left: 20px;
+	overflow: auto;
+}
 
 .restreview {
 	border-radius: 12px;

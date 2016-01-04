@@ -27,7 +27,6 @@ $(function() {
 // }else{
 // $("#signout")
 // }
-
 // adding some code in here for click will kill the session
 var y = 0;
 $(function() {
@@ -63,15 +62,23 @@ $(".menucloseicon").click(function(){
 
 $(".button2").click(function(){
         $("#newowner").fadeIn(1000)
+        $(".modalbkg").fadeIn(1000)
     });
 $(".button1").click(function(){
         $("#newuser").fadeIn(1000)
+        $(".modalbkg").fadeIn(1000)
     });
 $("#nucloseicon").click(function(){
         $(".lightbox").fadeOut(1000)
+        $(".modalbkg").fadeOut(1000)
     });
 $("#nocloseicon").click(function(){
         $(".lightbox").fadeOut(1000)
+        $(".modalbkg").fadeOut(1000)
+    });
+$("#wrcloseicon").click(function(){
+        $(".lightbox").fadeOut(1000)
+        $(".modalbkg").fadeOut(1000)
     });
 
 });

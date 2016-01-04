@@ -59,7 +59,6 @@
    height: 100%;
    /*top: 20%;*/
    left: 0;
-   z-index: 40;
    }
 
 .menulightbox:target {
