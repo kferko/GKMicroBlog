@@ -115,9 +115,13 @@
 				</div>
 				<div class="wrtxt">
 					<form method="post" action="/item/<%=test_dish.id%>/review" id="newreviewform">
-						<textarea name="description" maxlength="140" placeholder="Dish it out!" form="newreviewform" rows="5" cols="20" required></textarea>
-						<input type="number" name="rating" min="1", max="5", step="1" required>
-						<input type="submit" value="dish!">
+						<p>So tell us what you thought and...</p>
+						<textarea id="reviewfield" name="description" maxlength="140" placeholder="Dish it out!" form="newreviewform" rows="6" cols="28" required></textarea>
+						<p>don't forget to rate your dish...</p>
+						<input type="number" name="rating" rows="3" min="1", max="5", step="1" required>
+						<br>
+						<br>
+						<input type="submit" value="send in your dish!">
 					</form>
 				</div>
 			</div>

@@ -22,7 +22,7 @@
 	border-radius: 12px;
 	background-color: rgb(255, 248, 232);
 	width: 300px;
-	height: 310px;
+	height: 350px;
 	display:inline;
 	float:right;
 	position: relative;
@@ -51,7 +51,7 @@
 .wrbox{
 	background-color: rgb(255, 255, 255);
 	width: 290px;
-	height: 155px;
+	height: 195px;
 	position: relative;
 	margin: 0px 5px 0px 5px;
 	display:flex;
@@ -96,13 +96,16 @@
 	float:right;
 	margin-left: 25px;
 	width: 180px;
-	margin-top: 10px;
+	display:inline;
+	/*margin-top: 5px;*/
 }
 .wrtxt p{
 	color: rgb(121, 54, 81);
 	font-family: 'Questrial', sans-serif;
 	font-size: 12px;
 	line-height: 16px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .wrrate{
