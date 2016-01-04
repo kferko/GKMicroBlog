@@ -201,7 +201,8 @@ post '/item/:dish_id/review' do
     else
     	Review.where(dish_id: params[:dish_id], user_id: current_user.id).first.update_attributes(rating: params[:rating], description: params[:description])		
     end
-	erb :item_review
+    menu_id = Dish.find(params[:dish_id]).menu_id
+    redirect to "/menu/#{menu_id}"
 end
 
 post '/item/:dish_id/review/delete' do
