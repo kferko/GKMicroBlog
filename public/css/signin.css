@@ -8,6 +8,7 @@
   	/*align-items: center;*/
   	z-index: 37;
   	position: absolute;
+  	text-decoration: none;
 }
 .topsignin {
 	z-index: 37;
@@ -30,13 +31,24 @@
     display: flex;
 }
 #signout {
-    display: none;
+    display: flex;
 }
 
 #hello {
-	display: none;
-	color: rgb(255, 219, 148);
+	width: 200px;
+	display: flex;
+	margin-top: -10px;
+}
+#hello p {
+	color: rgb(252, 179, 77);
 	font-family: 'Quicksand', sans-serif;
-	font-size: 14px;
-	letter-spacing: -4px;
+	font-weight: 700;
+	font-size: 16px;
+}
+#hello a {
+	text-decoration: none;
+}
+#hello a:link, a:visited{
+	text-decoration: none;
+	color: rgb(240, 92, 34);
 }

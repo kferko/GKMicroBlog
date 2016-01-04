@@ -27,14 +27,15 @@
 		<div class="topmenu"><a href="#menuing" class="menubutton"><input type='image' img src="/img/menuicon.png"></a></div>
 	</div>
 	<div class="signin">
+		<%if current_user%>
+			<%="<div id='hello'><p>Hello <a href='/profile'>#{current_user.firstname}</a>! Let's Dish!</p></div>" %>
+		<%end%>
 		<div class="topsignin">
-			<div id="signon"><input type='image' id='clicksi' img src="/img/signin.png"></div>
-			<div id="signout"><input type='image' id='clickso' img src="/img/signout.png"></div>
-			<div id="hello">
-				<%if current_user%>
-				<%="<p>Hello #{current_user.firstname}! Let's Dish!</p>"%>
-				<%end%>
-			</div>
+			<%if current_user%>
+			<%="<a href='/sign-out'><div id='signout'><input type='image' id='clickso' img src='/img/signout.png'></div></a>" %>
+			<%else%>
+			<%="<div id='signon'><input type='image' id='clicksi' img src='/img/signin.png'></div>" %>
+			<%end%>
 		</div>
 	      	<div class="signinform">
 	    		<form method="POST" action="/sign-in" onsubmit="showHide()">
