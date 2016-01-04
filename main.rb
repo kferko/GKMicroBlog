@@ -150,6 +150,35 @@ post '/change-password/user/:user_id' do
 	erb :update_user
 end
 
+# route for deleting/destroying a User account
+post '/delete/user/:user_id' do
+	if valid_password?(current_user, params[:delete_password])
+		# delete reviews by user
+		current_user.reviews.each do |review|
+			review.destroy
+			puts "Review destroyed!"
+		end
+		# delete UserFriendships involving user
+		# where user is follower
+		UserFriendship.where(user_id: current_user.id).each do |friendship|
+			friendship.destroy
+		end
+		# where user is friend
+		UserFriendship.where(user_friend_id: current_user.id).each do |friendship|
+			friendship.destroy
+		end
+		# delete user
+		User.find(current_user.id).destroy
+		#TODO: add flash message for incorrect password
+		session.clear
+		redirect '/'
+	else
+		#TODO: add flash message for deletion success
+		puts "That is not the correct password!"
+		redirect '/user_home_css_ruby'
+	end
+end
+
 get '/menu/:menu_id' do
 	erb :restaurant_home_ruby
 end
