@@ -31,7 +31,9 @@
 			<div id="signon"><input type='image' id='clicksi' img src="/img/signin.png"></div>
 			<div id="signout"><input type='image' id='clickso' img src="/img/signout.png"></div>
 			<div id="hello">
-				<p>Hello "<%=current_user.firstname%>"! Let's Dish!</p>
+				<%if current_user%>
+				<%="<p>Hello #{current_user.firstname}! Let's Dish!</p>"%>
+				<%end%>
 			</div>
 		</div>
 	      	<div class="signinform">

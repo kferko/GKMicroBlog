@@ -68,6 +68,13 @@
 							<input id="passwordsubmit" type="submit" value="change password">
 						</form>	
 					</div>
+					<div id="deleteaccount">
+						<form method="POST" action="/delete/user/<%=current_user.id%>">
+							<p>To delete account, you must provide your password:</p>
+							<input id="deletepasswordinput" type="password" name="delete_password">
+							<input id="deleteaccountbutton" type="submit" value="delete account">
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
