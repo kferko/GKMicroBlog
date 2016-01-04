@@ -54,19 +54,20 @@
 			</div>
 			<div class="nubox">
 				<div class="nutxt">
-					<form method="POST" action="/create-user">
+					<form method="POST" id="createuserform" action="/create-user">
 						<p>Create a unique username...</p>							<input id="ef" type="text" name="username" placeholder="username" required>
 						<p>Create a unique password...</p>
 						<input id="ef" type="password" name="password" placeholder="password" required>
 						<p>Confirm your new password!</p>
 						<input id="ef" type="password" name="password_confirmation" placeholder="Confirm password" required>
+						<!-- <input id="nusubmit" type="submit" value="create new user!"> -->
 					</form>
 				</div>
 			</div>
 				<div class="nucloseaddbar">
 					<a href="#" class="close"><div id="nucloseicon">
 					</div></a>
-					<input id="subbutt" type="nusubmit" value="create new user!">
+					<input id="nusubmit" type="submit" value="create new user!" form="createuserform">
 				</div>
 		</div>
 	</div>
@@ -129,7 +130,6 @@
 						<a href="#" class="add to database"><div class="wricon"></div></a>
 					</div>
 		</div>
-	</div>
 </div>
 <div class="modalbkg"></div>
 <div class="menulightbox" id="menuing">
