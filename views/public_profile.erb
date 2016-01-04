@@ -34,8 +34,10 @@
 					<div id="dishdetails">
 						<p class="publicinfo"><%=current_other.reviews.count%> dishes</p>
 						<p class="publicinfo">Average score: <%=current_other.average_rating%> out of 5</p>
-						<p class="publicinfo">Best dish: <%=current_other.highest_review.dish.name%> from <%=current_other.highest_review.dish.menu.name%></p>
-						<p class="publicinfo">Worst dish: <%=current_other.lowest_review.dish.name%> from <%=current_other.lowest_review.dish.menu.name%></p>	
+						<%unless current_other.reviews.empty?%>
+						<%="<p class='publicinfo'>Best dish: #{current_other.highest_review.dish.name} from #{current_other.highest_review.dish.menu.name}</p>"%>
+						<%="<p class='publicinfo'>Worst dish: #{current_other.lowest_review.dish.name} from #{current_other.lowest_review.dish.menu.name}</p>"%>	
+						<%end%>
 					</div>
 						
 					
