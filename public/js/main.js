@@ -68,10 +68,20 @@ $(".button1").click(function(){
         $("#newuser").fadeIn(1000)
         $(".modalbkg").fadeIn(1000)
     });
+
 $(".addrev").click(function(){
+        var dishId = ($(this).closest('.dishselect').attr("data-dish-id"));
+        var userId = ($(this).closest('.dishselect').attr("data-user-id"));
+        var userName = ($(this).closest('.dishselect').attr("data-user-name"));
+        var dishName = ($(this).closest('.dishselect').attr("data-dish-name"));
+        $("#newreview #wrheader").html(dishName);
+        $("#newreview img").attr("src", "/img/avatars/" + userId + ".png");
+        $("#newreview #wrname").html(userName);
+        $("#newreview form").attr("action", "/item/" + dishId + "/review");
         $("#newreview").fadeIn(1000)
         $(".modalbkg").fadeIn(1000)
     });
+
 $("#nucloseicon").click(function(){
         $(".lightbox").fadeOut(1000)
         $(".modalbkg").fadeOut(1000)
@@ -84,10 +94,5 @@ $(".wrcloseicon").click(function(){
         $(".lightbox").fadeOut(1000)
         $(".modalbkg").fadeOut(1000)
     });
-
-$(".addrev").click(function(){
-    console.log($(this).closest('.dishselect'));
-  });
-
 });
 
