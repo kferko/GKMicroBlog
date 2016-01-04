@@ -11,10 +11,10 @@ body {
   	background-color: rgb(255, 248, 232);
 }
 *:focus {
-    outline: none;
+    outline: 0 !important;
 }
 .container { 
-	display: flex;
+	 display: flex;
   	z-index: 1;
 }
 .footer {
