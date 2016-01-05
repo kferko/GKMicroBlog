@@ -294,10 +294,19 @@
 	width: 480px;
 	margin-right: 20px;
 }
+.userprofileleft {
+	width: 480px;
+	margin-right: 20px;
+	margin-top: -20px;
+}
 .userreviewsright {
 	width: 480px;
 	margin-left: 20px;
 
+}
+.restuserrevright {
+	width: 480px;
+	margin-left: 40px;
 }
 
 .restreview {
@@ -773,13 +782,15 @@
 
 #userupdate {
 	font-family: 'Questrial', sans-serif;
-	font-size: 16px;
+	color: rgb(73, 152, 152);
+	font-weight: 700;
+	font-size: 14px;
 }
 
 #userbasicinfo {
 	float: right;
 	width: 250px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 #userbasicinfo label {
@@ -791,14 +802,16 @@
 	display: block;
 	padding: 2px 0px;
 	width: 246px;
+	margin-bottom: 10px;
 }
 
 #headeraddressinfo {
+	margin-top: -20px;
 	clear: both;
 }
 
 #useraddressinfo {
-	margin-bottom: 20px;	
+	margin-bottom: 5px;	
 	height: 110px;
 }
 
@@ -816,11 +829,14 @@
 	float: right;
 	padding-right: 50px;
 	padding-bottom: 5px;
+	margin-bottom: 20px;
 }
 
 #passwordchange {
 	font-family: 'Questrial', sans-serif;
-	font-size: 16px;
+	color: rgb(192, 62, 26);
+	font-weight: 700;
+	font-size: 14px;
 	margin-top: 40px;
 }
 
@@ -843,6 +859,7 @@ input.passwordinput {
 	float: right;
 	padding-right: 100px;
 	padding-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 #passwordsubmit {
@@ -850,6 +867,14 @@ input.passwordinput {
 	width: 130px;
 }
 
+#deleteaccount {
+	font-family: 'Questrial', sans-serif;
+	color: rgb(121, 54, 81);
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 40px;
+	margin-bottom: 5px;
+}
 #deletepasswordinput {
 	
 }
