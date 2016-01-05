@@ -15,24 +15,9 @@ get '/' do
 	erb :home_ruby
 end
 
-get '/user_home_css' do
-	@title = "dishdish  .  a greg and kevin production"
-	erb :user_home_css
-end
-
 get '/user_home_css_ruby' do
 	@title = "dishdish  .  a greg and kevin production"
 	erb :user_home_css_ruby
-end
-
-get '/owner_home_css' do
-	@title = "dishdish  .  a greg and kevin production"
-	erb :owner_home_css
-end
-
-get '/restaurant_home' do
-	@title = "dishdish  .  a greg and kevin production"
-	erb :restaurant_home
 end
 
 get '/restaurant_home_ruby' do
