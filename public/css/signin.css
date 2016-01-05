@@ -16,14 +16,12 @@
 }
 .signinform {
 	position: absolute;
-  	/*background-color: rgb(240, 92, 34);*/
   	right: -400px;
   	width: 330px;
   	height: 30px;
 	display:flex;
 	align-items:center;
 	float:right;
-	/*padding-left: 30px;*/
 	z-index: 3;
 	text-decoration: none;
 }

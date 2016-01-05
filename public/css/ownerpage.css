@@ -324,16 +324,6 @@
 	margin: 0;
 }
 
-.dishreview {
-	border-radius: 12px;
-	background-color: rgb(255, 248, 232);
-	width: 220px;
-	height: 320px;
-	display:inline;
-	float:right;
-	position: relative;
-	margin: 10px;
-}
 #drheader {
 	background-color: rgb(240, 92, 34);
 	width: 210px;
