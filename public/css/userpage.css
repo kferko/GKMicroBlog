@@ -704,7 +704,9 @@
 	height: 200px;
 	margin-top: 10px;
 	font-family: 'Questrial', sans-serif;
-	font-size: 16px;
+	color: rgb(192, 62, 26);
+	font-weight: 700;
+	font-size: 14px;
 }
 
 #profilephoto img {
@@ -713,11 +715,16 @@
 }
 
 #publicmotto {
+	font-family: 'Questrial', sans-serif;
+	color: rgb(192, 62, 26);
+	font-weight: 700;
+	font-size: 14px;
 	font-style: italic;
 }
 
 #publicdetails {
 	font-family: 'Questrial', sans-serif;
+	color: rgb(73, 152, 152);
 	font-size: 18px;
 	padding-left: 250px;
 	padding-top: 80px;
@@ -730,9 +737,11 @@
 
 #followdetails {
 	font-family: 'Questrial', sans-serif;
+	color: rgb(121, 54, 81);
 	font-size: 14px;
 	padding-left: 250px;
 	margin-top: 10px;
+	line-height: 18px;
 	height: 100px;
 }
 
@@ -750,7 +759,8 @@
 #dishdetails {
 	width: 450px;
 	font-family: 'Questrial', sans-serif;
-	font-size: 18px;
+	color: rgb(121, 54, 81);
+	font-size: 16px;
 	margin-top: 50px;
 	padding-left: 20px;
 }
