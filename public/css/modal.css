@@ -39,6 +39,11 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	color: rgb(255, 255, 255);
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: .5px;
 }
 #wrheader p{
 	color: rgb(255, 255, 255);
@@ -95,6 +100,10 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	color: rgb(255, 255, 255);
+	font-family: 'Questrial', sans-serif;
+	font-size: 12px;
+	text-align: center;
 }
 #wrname p{
 	color: rgb(255, 255, 255);
