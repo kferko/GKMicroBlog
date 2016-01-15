@@ -1,3 +1,6 @@
+/* styling for new user modal - modal is hidden in layout.erb - look at the bottom of the body */
+
+
 /* Making sure that the modal window is hidden by defaul and on top of all other elements on the website. */
 .modalwindow {
   position:fixed;

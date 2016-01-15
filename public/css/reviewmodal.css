@@ -1,3 +1,6 @@
+/* styling for review modal - modal is hidden in layout.erb - look at the bottom of the body */
+
+/* pull in other styling so consistent */
 .reviewfield {
 /*	width: 450px;
 	height: 500px;*/

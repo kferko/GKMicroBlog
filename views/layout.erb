@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<!-- title of page to be pulled in from main.rb -->
 	<title><%= @title %></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
@@ -24,10 +25,13 @@
 <body>
 <div class="container">
 	<div class="menuing">
+		<!-- left hand side main menu - intent is to populate with direct connections to pages containing master list of restaurants and master list of users -->
 		<div class="topmenu"><a href="#menuing" class="menubutton"><input type='image' img src="/img/menuicon.png"></a></div>
 	</div>
 	<div class="signin">
+		<!-- our slide out sign in menu that when logged in will double as our welcome message -->
 		<%if current_user%>
+			<!-- welcome message with user name that links to that user's profile page -->
 			<%="<div id='hello'><p>Hello <a href='/profile'>#{current_user.firstname}</a>! Let's Dish!</p></div>" %>
 		<%end%>
 		<div class="topsignin">
@@ -37,6 +41,7 @@
 			<%="<div id='signon'><input type='image' id='clicksi' img src='/img/signin.png'></div>" %>
 			<%end%>
 		</div>
+			<!-- "hidden" slide out sign in form -->
 	      	<div class="signinform">
 	    		<form method="POST" action="/sign-in" onsubmit="showHide()">
 					<input type="text" name="username" placeholder="username" required>
@@ -45,10 +50,13 @@
 				</form>
 	    	</div>
 	</div>
+	<!-- logo area to act as link back to home page -->
 	<div class="logo"><a href="/"><input type='image' id='logo' img src="/img/logo.png"></a></div>
 				<!-- start ruby -->
 					<%= yield %>	
 				<!-- end ruby -->
+<!-- beginning of our hidden modal area -->
+<!-- modal to creat a new user -->
 <div class="lightbox" id="newuser">
   	<div class="box">
    		<div class="newusermodal">
@@ -74,6 +82,7 @@
 		</div>
 	</div>
 </div>
+<!-- modal to creat a new restaurant admin/owner -->
 <div class="lightbox" id="newowner">
   	<div class="box">
 		<div class="newownermodal">
@@ -99,6 +108,7 @@
 		</div>
 	</div>
 </div>
+<!-- modal to creat a new review -->
 <div class="lightbox" id="newreview">
   	<div class="box">
 		<div class="writereview">
@@ -135,7 +145,9 @@
 		</div>
 	</div>
 </div>
+<!-- modal background color mask -->
 <div class="modalbkg"></div>
+<!-- modal of our main menu -->
 <div class="menulightbox" id="menuing">
   	<div class="menubox">
   		<div class="menuhighlight">
@@ -162,6 +174,7 @@
 	</div>
 </div>
 </div>
+<!-- place footer here with links to social media -->
 <div class="footer">
 	<div class="pagepeak_bott"><img src="/img/menupeak_bott.png"></div>
 	<div class="pagebott_fill"></div>
@@ -174,6 +187,7 @@
 		<i class="flaticon-youtube17"></i>
 		<i class="flaticon-linkedin11"></i>
 	</div>
+	<!-- place in copyright information -->
 	<div class="copyright">
 		<p>&copy; 2016 number2pencil,llc dba dishdish, inc.</p>
 	</div>

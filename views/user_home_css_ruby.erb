@@ -4,15 +4,18 @@
 		<div class="leftbody">
 			<div class="headerlcb">
 				<div id="lhead">
+					<!-- profile of user header area -->
 					<h1>your</h1><p>-</p><h2>profile</h2><h3>!</h3>
 				</div>
 				<div class="headerlcbw"></div>
 				<div class="userprofileleft">
+					<!-- avatar to be dynamically loaded once user has uploaded -->
 					<div id="profilephoto">
 						<img src="/img/avatars/<%=current_user.id%>.png">
+						<!-- pull in current users name from database -->
 						<h3><%=current_user.username%></h3>
 					</div>
-
+					<!-- form to display and allow user to update base information -->
 					<form id="userupdate" method='post' action='/update/user/<%=current_user.id%>'>
 						<div id="userbasicinfo">
 							<label for="firstname">First Name:</label>
@@ -26,6 +29,7 @@
 							<label for="motto">Motto:</label>
 							<input type="text" name="motto" value="<%=current_user.motto%>" maxlength="50">
 						</div>
+						<!-- area for personal address and update -->
 						<h4 id="headeraddressinfo">Address</h4>
 						<div id="useraddressinfo">
 							<div>
@@ -45,10 +49,12 @@
 								<input type="text" name="zip" value="<%=current_user.zip%>">
 							</div>
 						</div>
+						<!-- update button -->
 						<input type="submit" value="update profile details" >
 					</form>
 
 					<div id="passwordchange">
+						<!-- allow user to update password by entering in current passwrod and enter an dconfirm new password -->
 						<form method="POST" action="/change-password/user/<%=current_user.id%>">
 							<h4>Change password</h4>
 							<div id="userpasswordfields">
@@ -68,6 +74,7 @@
 							<input id="passwordsubmit" type="submit" value="change password">
 						</form>	
 					</div>
+					<!-- allow user to delete account - enter password to confirm -->
 					<div id="deleteaccount">
 						<form method="POST" action="/delete/user/<%=current_user.id%>">
 							<p>To delete account, you must provide your password:</p>
@@ -89,10 +96,11 @@
 				<div class="reviewsright">
 					<div id="rsubhead">
 						<div id="rsubhead_left">
-							
+							<!-- show other users current user is following -->
 							<h3><%=current_user.friends.count%> following</h3>
 						</div>
 						<div id="rsubhead_right">
+							<!-- show other users following curernt user -->
 							<h4><%=current_user.followers.count%> followers</h4>
 						</div>
 					</div>
@@ -134,8 +142,7 @@
 					</div>
 				</div>
 				<div class="horizbarcont"><div id="horizbar"></div></div>
-				<!-- #friendsreviewroll displays recent reviews by friends -->
-				<!-- TODO: fix scrolling and overflow into footer -->
+				<!-- show current user's reviews, if they have no reviews, show latest reviews in general or reviews of friends if possible -->
 				<div id="friendsreviewroll" class="restuserrevright">
 					<div id="rsubhead">
 						<h3>latest</h3><h4>dishes</h4>

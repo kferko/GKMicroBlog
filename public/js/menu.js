@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+// js/jq for accordion on restaurant menu pages - left side
+
     //Initialising Accordion
     $(".accordion").tabs(".pane", {
         tabs: '> h2',
